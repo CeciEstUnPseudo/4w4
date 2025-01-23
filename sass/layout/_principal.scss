@@ -1,9 +1,8 @@
 .global{
-  max-width:1100px;
 }
 
 .entete{
-  background-color:pink;
+  margin:0 auto;
 }
 
 .hero{
@@ -15,7 +14,7 @@
   &__contenu{
     width:60%;
     padding-top:3%;
-    margin-left:3%;
+    margin-left:5%;
 
   }
 

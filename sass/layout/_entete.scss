@@ -1,8 +1,16 @@
 .entete{
   display:flex;
   flex-direction:row;
-  justify-content:space-between;
   align-items:center;
+  height:10vh;
+
+  &__logo-box{
+    height:100%;
+  }
+
+  &__logo-img{
+    height:100%;
+  }
 
   &__nav{
     display:flex;
@@ -10,5 +18,29 @@
     justify-content:space-around;
     align-items:center;
     flex-wrap:nowrap;
+
+    margin-left:31%;
+
+    width:60%;
   }
+
+  &__recherche{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+
+    &-form{
+
+    }
+
+    &-input{
+
+    }
+
+    &-icon{
+      position:absolute;
+      right:2%;
+    }
+  }
+
 }
