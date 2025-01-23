@@ -1,8 +1,26 @@
 .global{
+  max-width:1100px;
+}
 
+.entete{
+  background-color:pink;
 }
 
 .hero{
   min-height: 100vh;
+  background-color:rgb(154, 101, 101);
+  background-image: url("images/maldives.jpg");
+  background-size: cover;
+
+  &__contenu{
+    width:60%;
+    padding-top:3%;
+    margin-left:3%;
+
+  }
+
+  &__description{
+    width:40%;
+  }
 }
 
