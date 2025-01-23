@@ -5,6 +5,7 @@ Exercice #1 (Pondération5%)
 # GITHUB PAGE
 # https://github.com/CeciEstUnPseudo/4w4.git 
 
+Auteur: Émile Litalien 
 
  Date de remise    Semaine #3            
 
