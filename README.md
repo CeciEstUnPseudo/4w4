@@ -6,6 +6,7 @@ Exercice #1 (Pondération5%)
 # https://ceciestunpseudo.github.io/4w4/
 
 
+Auteur: Émile Litalien 
 
  Date de remise    Semaine #3            
 
