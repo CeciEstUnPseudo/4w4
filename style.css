@@ -69,4 +69,11 @@ Le composant .carte
 }
 .carte__bouton:hover {
   background-color: #0056b3;
+}
+
+/* /////////////////////////
+Les layouts
+/////////////////////////// */
+.hero {
+  min-height: 100vh;
 }/*# sourceMappingURL=style.css.map */
