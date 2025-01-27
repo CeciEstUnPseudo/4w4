@@ -24,8 +24,8 @@ Les composants
   justify-content: space-around;
   align-items: center;
   flex-wrap: nowrap;
-  margin-right: -10%;
   padding: 0;
+  width: 80%;
   list-style-type: none;
 }
 .menu__li {
@@ -34,6 +34,7 @@ Les composants
 .menu__a {
   color: #333;
   text-decoration: none;
+  font-size: 0.7em;
   padding: 2px 5px;
 }
 
@@ -81,23 +82,51 @@ Le composant .carte
 /* /////////////////////////
 Les layouts
 /////////////////////////// */
-.entete {
-  margin: 0 auto;
-}
-
 .hero {
+  font-family: "Montserrat";
   min-height: 100vh;
   background-color: rgb(154, 101, 101);
   background-image: url("images/maldives.jpg");
   background-size: cover;
 }
 .hero__contenu {
-  width: 60%;
+  width: 90%;
   padding-top: 3%;
   margin-left: 5%;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+.hero__titre {
+  font-size: 2.3em;
+  color: black;
+  text-shadow: 2px 2px 4px #389757;
 }
 .hero__description {
-  width: 40%;
+  width: 48%;
+}
+.hero__bouton {
+  margin-bottom: 1%;
+  font-size: 0.7em;
+  width: 7%;
+  height: 5vh;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 0px solid black;
+  background-color: rgb(159, 228, 228);
+}
+.hero__icones-box {
+  width: 5%;
+}
+.hero__icones {
+  width: 30%;
+}
+
+.global {
+  font-family: "Montserrat";
+}
+
+.entete {
+  margin: 0 auto;
 }
 
 .entete {
@@ -108,6 +137,7 @@ Les layouts
 }
 .entete__logo-box {
   height: 100%;
+  margin-left: 0;
 }
 .entete__logo-img {
   height: 100%;
@@ -115,18 +145,17 @@ Les layouts
 .entete__nav {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: nowrap;
-  margin-left: 31%;
-  width: 60%;
+  margin-left: 15%;
+  width: 100%;
 }
 .entete__recherche {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.entete__recherche-icon {
-  position: absolute;
-  right: 2%;
+.entete__recherche-form {
+  width: 80%;
 }/*# sourceMappingURL=style.css.map */
