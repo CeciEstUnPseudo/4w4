@@ -2,19 +2,61 @@
   font-family:"Montserrat";
 }
 
-.entete{
-  margin:0 auto;
+
+
+
+#checkbox{
 }
 
+.burger{
+  display:none;
+  @media screen and (max-width: $point_rupture){
+    display:block;
+    position:absolute;
+    top:20%;
+    right:5%;
+    width:50px;
+    height:50px;
+    z-index:1000;
+  }
+}
+
+.checkbox__burger{
+  display:none;
+}
+
+.checkbox__burger:checked ~ .entete__nav {
+  display:flex;
+}
 .entete{
+  margin:0 auto;
   display:flex;
   flex-direction:row;
   align-items:center;
   height:10vh;
 
+  @media screen and (max-width: $point_rupture){
+    flex-direction:column;
+    align-items:center;
+    width:100vw;
+    gap: 30px 0;
+    position:absolute;
+    top:0;
+    right:0;
+    background-color:white;
+  }
+
   &__logo-box{
     height:100%;
     margin-left:0;
+
+    @media screen and (max-width: $point_rupture){
+      position:absolute;
+      left:10%;
+      top:-30%;
+      height:100%;
+
+    }
   }
 
   &__logo-img{
@@ -22,6 +64,7 @@
   }
 
   &__nav{
+
     display:flex;
     flex-direction:row;
     justify-content:space-between;
@@ -31,6 +74,17 @@
     margin-left:15%;
 
     width:100%;
+
+    @media screen and (max-width: $point_rupture){
+      display:none;
+      flex-direction:column;
+      align-items:center;
+      height:60vh;
+      width:100vw;
+      position:absolute;
+      top:25%;
+      right:0;
+    }
   }
 
 }

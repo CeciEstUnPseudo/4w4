@@ -19,6 +19,12 @@ Les Variables
 @import "variables/dimensions";
 
 /* /////////////////////////
+Les bases
+/////////////////////////// */
+@import "base/lien";
+@import "base/simple";
+
+/* /////////////////////////
 Les composants
 /////////////////////////// */
 @import "composants/menu";

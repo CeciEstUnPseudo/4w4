@@ -1,0 +1,10 @@
+#checkbox{
+}
+
+.burger{
+
+}
+
+.checkbox__burger:checked ~ .entete__nav {
+  display:flex;
+}
