@@ -20,13 +20,22 @@ Les composants
 /////////////////////////// */
 .menu {
   display: flex;
-  flex-direction: row;
   justify-content: right;
   align-items: center;
   flex-wrap: nowrap;
   padding-right: 1%;
   width: 80%;
   list-style-type: none;
+}
+.menu__ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+@media screen and (max-width: 820px) {
+  .menu__ul {
+    flex-direction: column;
+  }
 }
 .menu__li {
   display: inline-block;
@@ -95,6 +104,36 @@ Le composant .carte
 .recherche-input:hover {
   opacity: 100%;
 }
+.formulaire {
+  background-color: white;
+  box-shadow: 2px 2px 5px #888, -2px 2px 3px #888;
+  width: 60%;
+  margin: auto;
+  margin-top: -2%;
+  padding: 0.8% 1% 2% 1%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 0.6em;
+  font-family: "Montserrat";
+}
+.formulaire__section--titre {
+  margin-bottom: -0.5%;
+}
+.formulaire__section--input {
+  border: 1.5px solid rgb(159, 228, 228);
+  color: rgba(0, 0, 0, 0.418);
+  padding-right: 10%;
+}
+.formulaire__bouton {
+  width: 20%;
+  height: 10%;
+  align-self: end;
+  border: 1.5px solid rgb(159, 228, 228);
+  background-color: white;
+}
+
 /* /////////////////////////
 Les layouts
 /////////////////////////// */
@@ -113,7 +152,7 @@ Les layouts
   font-weight: bold;
 }
 .hero__titre {
-  font-size: 2.7em;
+  font-size: 3em;
   color: black;
   text-shadow: 2px 2px 4px #389757;
 }

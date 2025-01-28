@@ -1,7 +1,7 @@
 //  Header -> Menu
 .menu {
   display:flex;
-  flex-direction:row;
+
   justify-content: right;
   align-items:center;
   flex-wrap:nowrap;
@@ -11,6 +11,16 @@
 
 
   list-style-type: none;
+
+      &__ul{
+        display:flex;
+
+        flex-wrap:wrap;
+        flex-direction:row;
+        @media screen and (max-width:$point_rupture){
+          flex-direction:column;
+        }
+      }
 
       &__li {
         display: inline-block;
