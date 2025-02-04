@@ -1,0 +1,31 @@
+
+  .recherche{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+
+    border: 1px solid rgba(0,0,0,0.05);
+
+
+
+    @media screen and (max-width:$point_rupture){
+      display:none;
+    }
+
+    &-form{
+      width:80%;
+    }
+
+    &-input{
+      opacity:50%;
+
+      outline:none;
+      &:hover{
+        opacity:100%;
+      }
+    }
+
+    &-icon{
+
+    }
+  }

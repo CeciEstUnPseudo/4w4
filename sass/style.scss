@@ -16,13 +16,21 @@ Text Domain: 4w4-eddy
 Les Variables
 //////////////////////// */
 @import "variables/couleurs";
+@import "variables/dimensions";
+
+/* /////////////////////////
+Les bases
+/////////////////////////// */
+@import "base/lien";
+@import "base/simple";
 
 /* /////////////////////////
 Les composants
 /////////////////////////// */
 @import "composants/menu";
 @import "composants/carte";
-
+@import "composants/recherche";
+@import "composants/formulaire";
 
 /* /////////////////////////
 Les layouts
