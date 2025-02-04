@@ -1,6 +1,6 @@
 .formulaire{
   background-color:white;
-  box-shadow: 2px 2px 5px #888, -2px 2px 3px #888;
+  box-shadow: 2px 2px 5px #d6d6d6, -2px 2px 3px #d6d6d6;
   
   width:60%;
   margin:auto;
@@ -15,6 +15,11 @@
   font-size:0.6em;
   font-family:"Montserrat";
 
+  @media screen and (max-width:$point_rupture){
+    // Les screenshots ne montrent pas + pas pratique sur mobile avec des inputs si petits!
+    display:none;
+  }
+
   &__section{
     
     &--titre{
@@ -25,6 +30,7 @@
     }
 
     &--input{
+      width:100%;
       border: 1.5px solid $couleur__bleute;
       color:rgba(0, 0, 0, 0.418);
       padding-right:10%;

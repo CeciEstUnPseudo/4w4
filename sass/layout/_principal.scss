@@ -8,6 +8,10 @@
   background-image: url("images/maldives.jpg");
   background-size: cover;
 
+  @media screen and (max-width:$point_rupture){
+    margin-top:5%;
+  }
+
   &__contenu{
     width:90%;
     padding-top:3%;
@@ -44,9 +48,9 @@
   &__bouton{
     margin-bottom:1%;
     font-size:0.7em;
-    width:7%;
     height:5vh;
     font-weight:bold;
+    width:fit-content;
 
 
     border-radius: 5px;
@@ -62,6 +66,34 @@
 
   &__icones{
     width:30%;
+  }
+}
+
+
+.galerie{
+  margin: 6% auto;
+  width:90%;
+
+  &__titre{
+    width:fit-content;
+    font-size:0.9em;
+    font-family:"Montserrat";
+    color:black;
+
+  }
+
+  &__cartes{
+
+    width:100%;
+    margin:auto;
+
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+
+    justify-content:center;
+    align-items:center;
+    
   }
 }
 
