@@ -7,15 +7,21 @@ Le composant .carte
     width:49.5%;
   }
 
-  width:19.5%;
-  height:180px;
-  margin:0.25% 0.25% 0.25% 0.25%;
-  background-color:yellow;
+  // width:20%;
+  // height:20%;
+  // margin:0.25% 0.25% 0.25% 0.25%;
+  // background-color:yellow;
+
+  height:150px;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius:8 px;
+  flex: 1 1 250px;
 
 
   &__img{
-    height:100%;
     width:100%;
+    height:100%;
   }
   
 }
