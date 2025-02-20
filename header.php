@@ -17,8 +17,10 @@
         <header>
             <div class="entete global">
                 <figure class="entete__logo-box">
-                    <img class="entete__logo-img" src="\4w4\wp-content\themes\TP1\images/logo.png" alt="">
+                    <img class="entete__logo-img" src="https://gftnth00.mywhc.ca/4w4_28/wp-content/uploads/2025/02/logo.png" alt="">
                 </figure>
+
+                
 
                 <label for="checkbox__burger" class="burger">
                     <img class="burger__img" src="https://s2.svgbox.net/hero-outline.svg?ic=menu&color=000" width="32" height="32">
@@ -33,13 +35,16 @@
                             'container_class'      => 'entete__menu',
                 )); ?>
 
-                
-                    <div class="recherche">
-                        <form action="" class="recherche-form">
-                            <input type="text" value="Recherche..." class="recherche-input">
-                        </form>
-                        <img class="recherche-icon" src="https://s2.svgbox.net/hero-outline.svg?ic=search&color=000" width="20" height="20">
-                    </div>
+
+                <form class="recherche" role="search" method="get"  action="<?php echo esc_url( home_url( '/' ) ); ?>">
+                <label>
+                    <input class="recherche__input" type="search" class="search-field" placeholder="Search..." value="<?php echo get_search_query(); ?>" name="s" />
+                </label>
+                <button class="recherche__bouton" type="submit" class="search-submit">
+                <img class="recherche-icon" src="https://s2.svgbox.net/hero-outline.svg?ic=search&color=000" width="14" height="13">
+                </button>
+                </form>
+
                 </div>
             </div>
         </header>

@@ -9,7 +9,7 @@
   flex-wrap:nowrap;
 
   padding-right:1%;
-  width:80%;
+  width:90%;
 
 
   list-style-type: none;
@@ -45,16 +45,14 @@
       }
 
       &-item {
-        display: inline-block;
 
         & a{
           color: $couleur__lien;
           text-decoration: none;
           font-size: 0.7em;
 
-          width:fit-content;
-
           padding: 5px;
+          text-wrap:nowrap;
 
           &:hover{
             color: $couleur__lien--hover;

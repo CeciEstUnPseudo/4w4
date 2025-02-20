@@ -3,7 +3,7 @@
 .hero{
   font-family:"Montserrat";
 
-  min-height: 100vh;
+  min-height: 80vh;
   background-color:rgb(154, 101, 101);
   background-image: url("images/maldives.jpg");
   background-size: cover;
@@ -13,11 +13,14 @@
   }
 
   &__contenu{
-    width:90%;
+    height:50vh;
+    width:100%;
     padding-top:3%;
     margin-left:5%;
-
-    font-size:0.8em;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    
     font-weight:bold;
 
   }
@@ -31,6 +34,7 @@
 
   &__description{
     width:48%;
+    padding:10% auto;
   }
 
   &__addresse-electronique{
