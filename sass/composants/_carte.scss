@@ -3,49 +3,43 @@ Le composant .carte
 ********************** */
 
 .carte {
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 8px;
-    
-  
-    &--grande {
-      padding: 40px;
-    }
-  
-    &__image img {
-      max-width: 100%;
-      border-radius: 8px;
-    }
-  
-    &__contenu {
-      margin-top: 15px;
-    }
-  
-    &__titre {
-      font-size: 24px;
-      color: #333;
-    }
-  
-    &__description {
-      font-size: 16px;
-      color: #666;
-    }
-  
-    &__bouton {
-      padding: 10px 20px;
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-  
-      &--actif {
-        background-color: #0056b3;
-      }
-  
-      &:hover {
-        background-color: #0056b3;
-      }
-    }
+  @media screen and (max-width:$point_rupture){
+    width:49.5%;
   }
+
+  // width:20%;
+  // height:20%;
+  // margin:0.25% 0.25% 0.25% 0.25%;
+  // background-color:yellow;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius:8 px;
+  flex: 1 1 250px;
+  
+
+
+  &__img{
+    width:100%;
+    height:100%;
+  }
+
+  &__contenu{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    justify-content:space-around;
+    align-items:top;
+
+    &--texte{
+      padding-left:2%;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-around;
+      align-items:left;
+    }
+
+  
+  }
+  
+}
   

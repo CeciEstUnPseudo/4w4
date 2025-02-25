@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mondo Voyages | H2025 4W4 | Émile Litalien | TP 1</title>
+    <title>Mondo Voyages | H2025 4W4 | Émile Litalien</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,6 +17,7 @@
         <header>
             <div class="entete global">
                 <figure class="entete__logo-box">
+                    <a href="<?php echo home_url(); ?>">
                     <img class="entete__logo-img" src="https://gftnth00.mywhc.ca/4w4_28/wp-content/uploads/2025/02/logo.png" alt="">
                 </figure>
 
