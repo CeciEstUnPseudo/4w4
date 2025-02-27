@@ -2,7 +2,6 @@
     // Modèle front-page.php permet d'afficher la page d'accueil
     ?>
     <?php get_header() ?>
-    <h1>front-page.php</h1>
 
     <section class="hero">
         <div class="hero__contenu">
