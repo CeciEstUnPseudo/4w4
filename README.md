@@ -1,3 +1,8 @@
+Émile Litalien
+
+https://gftnth00.mywhc.ca/4w4_28/
+
+
 Devis – TP1 : Création d’un site WordPress pour un club de voyage
 
 Objectifs du TP1
