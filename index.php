@@ -1,4 +1,4 @@
-<?php 
+<?php
 // Modèle index.php est le modèle par défaut
 // Si aucun modèle peut satisfaire la requête http, ce modèle s'affichera
 ?>
@@ -7,7 +7,7 @@
 <?php get_header() ?>
 <h1>index.php</h1>
 
-        <!-- <section class="hero">
+<!-- <section class="hero">
             <div class="hero__contenu">
                 <h1 class="hero__titre">Voyager autrement avec Mondo Voyages!</h1>
                 <p class="hero__description">
@@ -27,7 +27,7 @@
             </div>
         </section> -->
 
-        <!-- <section class="formulaire">
+<!-- <section class="formulaire">
                 <div class="formulaire__section">
                     <p class = "formulaire__section--titre">
                         Nom
@@ -64,7 +64,7 @@
                 <button class="formulaire__bouton">S'INSCRIRE</button>
         </section> -->
 
-        <!-- <section class="galerie">
+<!-- <section class="galerie">
             <h2 class="galerie__titre">Nos destinations favorites</h2>
 
                 <div class="carte">
@@ -99,35 +99,38 @@
                 </div>
         </section> -->
 
-        <section class="populaire">
-            <div class="populaire__contenant">
-                <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+<section class="populaire">
+    <div class="populaire__contenant">
+        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                 <article class="populaire__article">
 
-<div class="carte__contenu">
-    <?php 
-        if (has_post_thumbnail()) {
-            // Afficher la petite image associée à l'article (image mise en avant)
-            the_post_thumbnail('thumbnail'); }
-    ?>
-    <div class="carte__contenu--texte">
-        <h2 class="carte__titre">
-            <?php the_title(); ?>
-        </h2>
-        <p class="carte__description">
-            <?php echo wp_trim_words(get_the_excerpt(), 80, "..."); ?>
-        </p>
+                    <div class="carte__contenu">
+                        <?php
+                        if (has_post_thumbnail()) {
+                            // Afficher la petite image associée à l'article (image mise en avant)
+                            the_post_thumbnail('thumbnail');
+                        }
+                        ?>
+                        <div class="carte__contenu--texte">
+                            <h2 class="carte__titre">
+                                <?php the_title(); ?>
+                            </h2>
+                            <p class="carte__description">
+                                <?php echo wp_trim_words(get_the_excerpt(), 80, "..."); ?>
+                            </p>
 
-        
+
+                        </div>
+                    </div>
+
+                </article>
+        <?php endwhile;
+        endif; ?>
     </div>
-</div>
+</section>
 
-</article>
-                <?php endwhile; endif; ?>
-            </div>
-        </section>
-
-        <?php get_footer() ?>
+<?php get_footer() ?>
 
 </body>
+
 </html>

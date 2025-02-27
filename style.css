@@ -165,8 +165,8 @@ Le composant .carte
 
 .populaire {
   width: 100%;
-  max-height: 80vh;
-  min-height: 80vh;
+  max-height: 60vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -177,8 +177,6 @@ Le composant .carte
 .populaire__contenant {
   background-color: rgb(235, 235, 235);
   width: 95%;
-  min-height: fit-content;
-  max-height: 70vh;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

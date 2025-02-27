@@ -18,7 +18,11 @@
             <div class="entete global">
                 <figure class="entete__logo-box">
                     <a href="<?php echo home_url(); ?>">
-                    <img class="entete__logo-img" src="https://gftnth00.mywhc.ca/4w4_28/wp-content/uploads/2025/02/logo.png" alt="">
+                        <?php 
+                            if (function_exists('the_custom_logo')) {
+                                the_custom_logo();
+                            } 
+                        ?>
                 </figure>
 
                 
