@@ -496,7 +496,7 @@ body {
   --------------------------------- Layout du pied de page
 */
 footer {
-  background-color: rgb(236, 136, 13);
+  background-color: rgb(224, 224, 224);
   color: #000;
 }
 
@@ -559,7 +559,7 @@ footer {
 
 .piedpage__s1__externe .menu a:hover {
   
-  background-color: rgb(225, 132, 17);
+  background-color: rgb(165, 165, 165);
   text-decoration:underline;
 }
 
@@ -592,6 +592,7 @@ footer {
   text-align: center;
   margin-top:2%;
   text-decoration:underline;
+  font-size:medium;
 }
 .piedpage__s1__description {
   flex: 0 0 20%;
@@ -599,7 +600,9 @@ footer {
   flex-direction:column;
   justify-content:center;
   align-items:center;
+  margin-right:1%;
 
+  font-size:smaller;
 }/*# sourceMappingURL=style.css.map */
 
 
@@ -635,5 +638,5 @@ footer {
     color: black;
     text-align: center;
     margin:2% auto;
-    width:fit-content;
+    width:80%;
   }
