@@ -49,20 +49,22 @@
   }
 
   &__logo-box{
-    height:100%;
+    width:10px;
+    height:10px;
     margin-left:0;
+    background-color:red;
 
     @media screen and (max-width: $point_rupture){
       position:absolute;
       left:10%;
       top:-30%;
-      height:100%;
+      height:20px;
 
     }
-  }
-
-  &__logo-img{
-    height:100%;
+    .custom-logo{
+      width:100%;
+      height:100%;
+    }
   }
 
   &__nav{

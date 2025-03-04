@@ -17,7 +17,6 @@
         <header>
             <div class="entete global">
                 <figure class="entete__logo-box">
-                    <a href="<?php echo home_url(); ?>">
                         <?php 
                             if (function_exists('the_custom_logo')) {
                                 the_custom_logo();
