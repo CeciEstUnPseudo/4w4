@@ -42,4 +42,13 @@ Le composant .carte
   }
   
 }
+
+.post-categories {
+  display: flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
   

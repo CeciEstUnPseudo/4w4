@@ -5,13 +5,7 @@
 
 
 <?php get_header() ?>
-<h1>category.php</h1>
-<h1>
-    <?php
-    // Affiche le nom de la catégorie actuelle
-    single_cat_title();
-    ?>
-</h1>
+<h1 class="category__titre">Categorie actuelle: <?php single_cat_title();?></h1>
 <?php echo category_description(); ?>
 <section class="populaire">
     <div class="populaire__contenant"></div>

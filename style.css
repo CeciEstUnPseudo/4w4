@@ -129,26 +129,62 @@ Le composant .carte
   align-items: left;
 }
 
+.post-categories {
+  display: flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+  justify-content: left;
+  margin-top: 2em;
+
+  list-style:none;
+  
+  & li {
+    margin-right: 1em;
+    padding: 0.2em 2em;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+
+    &:hover   {
+      background-color: #e1e1e1;
+    }
+
+    & a {
+      text-decoration: none;
+      color: #000;
+    }
+  }
+}
+
+
 .recherche {
   display: flex;
   flex-direction: row;
   align-items: center;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-}
+  }
 @media screen and (max-width: 820px) {
   .recherche {
     display: none;
   }
 }
-.recherche-form {
-  width: 80%;
-}
-.recherche-input {
-  opacity: 50%;
-  outline: none;
-}
-.recherche-input:hover {
+.recherche__input {
   opacity: 100%;
+  outline: none;
+
+}
+.recherche__input:hover {
+  opacity: 90%;
+}
+.recherche__bouton {
+  border: 1.5px solid rgb(0, 0, 0);
+  border-right:none;
+  color: black;
+  font-weight: bold;
+  width:20px;
+  height:19px;
+}
+.recherche__icon {
+  color: black;
+  font-weight: bold;
 }
 .formulaire {
   background-color: white;
@@ -188,7 +224,6 @@ Le composant .carte
 
 .populaire {
   width: 100%;
-  max-height: 60vh;
   min-height: 10vh;
   display: flex;
   flex-direction: row;
@@ -355,7 +390,7 @@ body {
 }
 .entete__logo-box {
   height: 100%;
-  width:8%;
+  width:5%;
   margin-left: 0;
 }
 .custom-logo{
@@ -468,6 +503,8 @@ footer {
 .piedpage {
   display: flex;
   flex-direction: column;
+
+  font-family: "Montserrat";
 }
 .piedpage__s1 {
   display: flex;
@@ -475,15 +512,128 @@ footer {
   gap: 3rem;
 }
 .piedpage__s1__externe {
-  flex: 0 0 20%;
+  flex: 0 0 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.piedpage__s1__externe__titre{
+  color: black;
+  text-align: center;
+  text-decoration:underline;
 }
 .piedpage__s1__externe .menu {
+  
   display: flex;
   flex-direction: column;
 }
+
+.liste2{
+  margin-top:0.5%;
+}
+
+.liste2 .menu-principal-container{
+  margin-top:2%;
+  height:50%;
+}
+.liste2 .menu {
+  height:100%;  
+  display: flex;
+  flex-direction: column;
+  flex-wrap:wrap;
+}
+
+
+.piedpage__s1__externe .menu a {
+  
+  color: black;
+  text-decoration: none;
+  font-size: 0.7em;
+  padding: 5px;
+  text-wrap: nowrap;
+
+  border-radius:5px;
+}
+
+.piedpage__s1__externe .menu a:hover {
+  
+  background-color: rgb(225, 132, 17);
+  text-decoration:underline;
+}
+
+.menu-externe-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2%;
+}
+
 .piedpage__s1__adresse {
-  flex: 0 0 40%;
+  flex: 1 0 40%;
+
+  margin-top:1%;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+}
+
+.piedpage__s1__adresse__recherche {
+  margin:1% auto;
+}
+
+.piedpage__s1__description__titre {
+  color: black;
+  text-align: center;
+  margin-top:2%;
+  text-decoration:underline;
 }
 .piedpage__s1__description {
-  flex: 1 0 400px;
+  flex: 0 0 20%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
 }/*# sourceMappingURL=style.css.map */
+
+
+.search__titre {
+    font-size: 1.5em;
+    font-family: "Montserrat";
+    color: black;
+    text-align: center;
+    margin-top: 2%;
+  }
+
+  .search__populaire {
+    height:72vh;
+  }
+
+  .search__contenant {
+    max-height:100%;
+  }
+
+  .category__titre {
+    
+    font-size: 1.5em;
+    font-family: "Montserrat";
+    color: black;
+    text-align: center;
+    margin:2% auto;
+    width:fit-content;
+  }
+
+  .category__description {
+    font-size: 1em;
+    font-family: "Montserrat";
+    color: black;
+    text-align: center;
+    margin:2% auto;
+    width:fit-content;
+  }

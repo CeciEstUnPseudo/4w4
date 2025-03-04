@@ -12,7 +12,11 @@ if (has_post_thumbnail()) {
     <?php echo wp_trim_words(get_the_excerpt(), 30, "..."); ?>
   </p>
 
+  <p>Temp. Min: <?php echo the_field("temperature_minimum"); ?> °C</p>
+  <p>Temp. Max: <?php echo the_field("temperature_maximum"); ?> °C</p>
+
+
   <a class="carte__bouton carte__bouton--actif" href="<?php the_permalink(); ?>">Suite</a>
 
-
+  <?php the_category(); ?>
 </div>
