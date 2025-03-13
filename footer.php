@@ -4,7 +4,6 @@
         .hero_couleur{
             color: <?php echo $hero_text_color ?>;
         }
-
     </style>
 
 <?php $hero_text_color = get_theme_mod('hero_couleur', ''); ?>
