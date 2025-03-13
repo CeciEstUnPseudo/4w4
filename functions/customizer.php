@@ -7,12 +7,12 @@
   ));
 
   $wp_customize->add_setting('hero_auteur', array(
-    'default' => __('Émile Litalien', 'theme_31w'),
+    'default' => __("Nom de l'auteur", 'theme_31w'),
     'sanitize_callback' => 'sanitize_text_field'
   ));
 
   $wp_customize->add_control('hero_auteur', array(
-    'label' => __('Hero Auteur', 'theme_31w'),
+    'label' => __('Auteur', 'theme_31w'),
     'section' => 'hero_section',
     'type' => 'text',
   ));

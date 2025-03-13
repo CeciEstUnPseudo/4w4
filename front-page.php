@@ -4,7 +4,7 @@
     <?php get_header() ?>
 
 
-    <?php $hero_auteur = get_theme_mod('hero_auteur', 'Default Title'); ?>
+    <?php $hero_auteur = get_theme_mod('hero_auteur', ''); ?>
     <?php $hero_background = get_theme_mod('hero_background', ''); ?>
     <?php $hero_text_color = get_theme_mod('hero_text_color', ''); ?>
     <?php $hero_email = get_theme_mod('hero_mail', ''); ?>
