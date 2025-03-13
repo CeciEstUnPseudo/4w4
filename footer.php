@@ -1,4 +1,6 @@
 <footer>
+
+<?php $footer_mission = get_theme_mod("footer_mission", "Default" ) ?>
     <div class="piedpage global">
         <section class="piedpage__s1">
             <div class="piedpage__s1__externe">
@@ -41,4 +43,4 @@
 
     </div>
 </footer>
-<?php wp_footer() ?>
+<?php  wp_footer() ?>

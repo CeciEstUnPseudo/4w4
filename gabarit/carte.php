@@ -9,7 +9,7 @@ if (has_post_thumbnail()) {
     <?php the_title(); ?>
   </h2>
   <p class="carte__description">
-    <?php echo wp_trim_words(get_the_excerpt(), 30, "..."); ?>
+    <?php echo wp_trim_words(get_the_excerpt(), 20, "..."); ?>
   </p>
 
   <p>Temp. Min: <?php echo the_field("temperature_minimum"); ?> °C</p>

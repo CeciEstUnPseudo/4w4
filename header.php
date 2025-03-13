@@ -27,9 +27,10 @@
                 
 
                 <label for="checkbox__burger" class="burger">
-                    <img class="burger__img" src="https://s2.svgbox.net/hero-outline.svg?ic=menu&color=000" width="32" height="32">
+                    <img class="burger__img" src="https://s2.svgbox.net/hero-outline.svg?ic=menu&color=000">
                 </label>
                 <input type="checkbox" id="checkbox__burger" class="checkbox__burger">
+                
 
                 <div class="entete__nav">
 

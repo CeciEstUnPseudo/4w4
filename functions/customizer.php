@@ -1,0 +1,63 @@
+<?php 
+  function theme_31w_customize_register($wp_customize) {
+    // Le code pour ajouter des sections, des réglages et des contrôles ira ici.
+    $wp_customize->add_section('hero_section', array(
+      'title' => __('Hero Customisation', 'theme_31w'),
+      'priority' => 30,
+  ));
+
+  $wp_customize->add_setting('hero_auteur', array(
+    'default' => __('Émile Litalien', 'theme_31w'),
+    'sanitize_callback' => 'sanitize_text_field'
+  ));
+
+  $wp_customize->add_control('hero_auteur', array(
+    'label' => __('Hero Auteur', 'theme_31w'),
+    'section' => 'hero_section',
+    'type' => 'text',
+  ));
+
+  // Image background zone Hero
+
+  $wp_customize->add_setting('hero_background', array(
+    'default' => '',
+    'sanitize_callback' => 'esc_url_raw',
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_background', array(
+    'label' => __('Image en background', 'theme_31w'),
+    'section' => 'hero_section',
+  )));
+  //
+
+  // Couleur du texte
+    $wp_customize->add_setting('hero_couleur', array(
+      'default' => '',
+      'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'hero_couleur', array(
+      'label' => __('COuleur du texte', 'theme_31w'),
+      'section' => 'hero_section',
+    )));
+  //
+
+  $wp_customize->add_section('footer_section', array(
+    'title' => __('Footer Customisation', 'theme_31w'),
+    'priority' => 30,
+  ));
+
+  $wp_customize->add_setting('footer_mission', array(
+  'default' => __('Notre mission', 'theme_31w'),
+  'sanitize_callback' => 'sanitize_text_field'
+  ));
+
+  $wp_customize->add_control('footer_mission', array(
+  'label' => __('Footer Mission', 'theme_31w'),
+  'section' => 'footer_section',
+  'type' => 'text',
+  ));
+  }
+
+  add_action('customize_register', 'theme_31w_customize_register');
+?>

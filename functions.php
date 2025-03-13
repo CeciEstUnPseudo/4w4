@@ -1,5 +1,19 @@
 <?php
 
+// Définir le chemin vers le dossier "functions"
+$functions_dir = get_template_directory() . '/functions/';
+
+// Liste des fichiers à inclure
+$function_files = array(
+    'customizer.php',
+    'autre.php',
+);
+
+// Boucle pour inclure tous les fichiers
+foreach ($function_files as $file) {
+    include_once $functions_dir . $file;
+}
+
 function mon_theme_supports() {
   add_theme_support('title-tag');
   add_theme_support('menus');
@@ -43,3 +57,4 @@ function modifie_requete_principal( $query ) {
    }
    add_action( 'pre_get_posts', 'modifie_requete_principal' );
 ?>
+

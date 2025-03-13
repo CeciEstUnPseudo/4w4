@@ -3,7 +3,12 @@
     ?>
     <?php get_header() ?>
 
-    <section class="hero">
+
+    <?php $hero_auteur = get_theme_mod('hero_auteur', 'Default Title'); ?>
+    <?php $hero_background = get_theme_mod('hero_background', ''); ?>
+    <?php $hero_text_color = get_theme_mod('hero_text_color', ''); ?>
+
+    <section class="hero" style="color: <?php echo $hero_text_color; ?> background-image: url('<?php echo $hero_background; ?>')">
         <div class="hero__contenu">
             <h1 class="hero__titre">
                 <?php echo bloginfo("name"); ?>
@@ -13,6 +18,7 @@
 
             </p>
 
+            <?php  ?>
 
             <p class="hero__addresse-electronique">info@cmaisonneuve.qc.ca</p>
             <p class="hero__addresse-physique">3800, rue Sherbrooke, Montréal</p>
@@ -23,6 +29,7 @@
                 <img class="hero__icones" src="https://s2.svgbox.net/social.svg?ic=facebook&color=000" width="32" height="32">
                 <img class="hero__icones" src="https://s2.svgbox.net/social.svg?ic=instagram&color=000" width="32" height="32">
             </div>
+            <p>Auteur: <?php echo $hero_auteur; ?></p>
         </div>
     </section>
 
