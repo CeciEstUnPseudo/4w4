@@ -11,7 +11,7 @@
     <?php $hero_lieu = get_theme_mod('hero_lieu', ''); ?>
     <?php $hero_telephone = get_theme_mod('hero_telephone', ''); ?>
 
-    <section class="hero" style="color: <?php echo $hero_text_color; ?> background-image: url('<?php echo $hero_background; ?>')">
+    <section class="hero" style="color: <?php echo $hero_text_color ?> background-image: url('<?php echo $hero_background; ?>')">
         <div class="hero__contenu">
             <h1 class="hero__titre">
                 <?php echo bloginfo("name"); ?>
