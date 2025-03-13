@@ -17,6 +17,39 @@
     'type' => 'text',
   ));
 
+  $wp_customize->add_setting('hero_mail', array(
+    'default' => __('Adresse Mail', 'theme_31w'),
+    'sanitize_callback' => 'sanitize_text_field'
+  ));
+
+  $wp_customize->add_control('hero_mail', array(
+    'label' => __('Hero Email', 'theme_31w'),
+    'section' => 'hero_section',
+    'type' => 'text',
+  ));
+
+  $wp_customize->add_setting('hero_lieu', array(
+    'default' => __('Adresse Physique (lieu)', 'theme_31w'),
+    'sanitize_callback' => 'sanitize_text_field'
+  ));
+
+  $wp_customize->add_control('hero_lieu', array(
+    'label' => __('Hero Lieu', 'theme_31w'),
+    'section' => 'hero_section',
+    'type' => 'text',
+  ));
+
+  $wp_customize->add_setting('hero_telephone', array(
+    'default' => __('Numéro de telephone', 'theme_31w'),
+    'sanitize_callback' => 'sanitize_text_field'
+  ));
+
+  $wp_customize->add_control('hero_telephone', array(
+    'label' => __('Hero Telephone', 'theme_31w'),
+    'section' => 'hero_section',
+    'type' => 'text',
+  ));
+
   // Image background zone Hero
 
   $wp_customize->add_setting('hero_background', array(

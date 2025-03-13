@@ -7,6 +7,9 @@
     <?php $hero_auteur = get_theme_mod('hero_auteur', 'Default Title'); ?>
     <?php $hero_background = get_theme_mod('hero_background', ''); ?>
     <?php $hero_text_color = get_theme_mod('hero_text_color', ''); ?>
+    <?php $hero_email = get_theme_mod('hero_mail', ''); ?>
+    <?php $hero_lieu = get_theme_mod('hero_lieu', ''); ?>
+    <?php $hero_telephone = get_theme_mod('hero_telephone', ''); ?>
 
     <section class="hero" style="color: <?php echo $hero_text_color; ?> background-image: url('<?php echo $hero_background; ?>')">
         <div class="hero__contenu">
@@ -20,9 +23,9 @@
 
             <?php  ?>
 
-            <p class="hero__addresse-electronique">info@cmaisonneuve.qc.ca</p>
-            <p class="hero__addresse-physique">3800, rue Sherbrooke, Montréal</p>
-            <p class="hero__telephone">514-254-7131</p>
+            <p class="hero__addresse-electronique"><?php echo $hero_email ?></p>
+            <p class="hero__addresse-physique"><?php echo $hero_lieu ?></p>
+            <p class="hero__telephone"><?php echo $hero_telephone ?></p>
             <a href="" class="hero__courriel"></a>
             <button class="hero__bouton">S'INSCRIRE</button>
             <div class="hero__icones-box">
