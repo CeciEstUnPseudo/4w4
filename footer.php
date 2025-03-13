@@ -1,6 +1,11 @@
 <footer>
 
+
 <?php $footer_mission = get_theme_mod("footer_mission", "Default" ) ?>
+<?php $footer_adresse = get_theme_mod("footer_adresse", "Default" ) ?>
+<?php $footer_lieu = get_theme_mod("footer_lieu", "Default" ) ?>
+<?php $footer_telephone = get_theme_mod("footer_telephone", "Default" ) ?>
+
     <div class="piedpage global">
         <section class="piedpage__s1">
             <div class="piedpage__s1__externe">
@@ -21,7 +26,7 @@
             </div>
             <div class="piedpage__s1__adresse">
                 <div class="piedpage__s1__adresse__coord">
-                info@cmaisonneuve.qc.ca | 800, rue Sherbrooke, Montréal | 514-254-7131
+                <?php echo $footer_adresse ?> | <?php echo $footer_lieu ?> | <?php echo $footer_telephone ?>
                 </div>
                 <div class="piedpage__s1__adresse__recherche">
                     <?php get_search_form();   ?>
@@ -34,12 +39,9 @@
             </div>
             <div class="piedpage__s1__description">
                 <p class="piedpage__s1__description__titre">Qui sommes-nous?</p>
-                Sur Site de Voyage.com.Inc.standard, vous trouvez plein de destinations pour vos vacances, qu'elles soient en famille, entre amis, ou seul! Vous verrez, nous avons de tout, incluant le Stade Olympique!
+                <?php echo $footer_mission ?>
             </div>
         </section>
-        <section class="piedpage__s2"></section>
-        <section class="piedpage__s3"></section>
-
 
     </div>
 </footer>

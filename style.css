@@ -569,6 +569,8 @@ footer {
   
   display: flex;
   flex-direction: column;
+  justify-content:center;
+  align-items:center;
 }
 
 .liste2{
@@ -645,6 +647,13 @@ footer {
 
   font-size:smaller;
 }/*# sourceMappingURL=style.css.map */
+
+@media screen and (max-width: 820px) {
+  .piedpage__s1__adresse{
+    width:30%;
+    flex: 1 0 30%;
+  }
+}
 
 
 .search__titre {

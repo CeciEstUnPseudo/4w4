@@ -70,7 +70,7 @@
     ));
 
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'hero_couleur', array(
-      'label' => __('COuleur du texte', 'theme_31w'),
+      'label' => __('Couleur du texte', 'theme_31w'),
       'section' => 'hero_section',
     )));
   //
@@ -86,11 +86,45 @@
   ));
 
   $wp_customize->add_control('footer_mission', array(
-  'label' => __('Footer Mission', 'theme_31w'),
+  'label' => __('Mission', 'theme_31w'),
   'section' => 'footer_section',
   'type' => 'text',
   ));
+
+  $wp_customize->add_setting('footer_adresse', array(
+    'default' => __('Adresse', 'theme_31w'),
+    'sanitize_callback' => 'sanitize_text_field'
+    ));
+  
+    $wp_customize->add_control('footer_adresse', array(
+    'label' => __('Adresse Mail', 'theme_31w'),
+    'section' => 'footer_section',
+    'type' => 'text',
+    ));
+
+    $wp_customize->add_setting('footer_lieu', array(
+      'default' => __('Lieu physique', 'theme_31w'),
+      'sanitize_callback' => 'sanitize_text_field'
+      ));
+    
+      $wp_customize->add_control('footer_lieu', array(
+      'label' => __('Lieu physique', 'theme_31w'),
+      'section' => 'footer_section',
+      'type' => 'text',
+      ));
+
+    $wp_customize->add_setting('footer_telephone', array(
+      'default' => __('Numéro de téléphone', 'theme_31w'),
+      'sanitize_callback' => 'sanitize_text_field'
+      ));
+    
+      $wp_customize->add_control('footer_telephone', array(
+      'label' => __('Numéro de téléphone', 'theme_31w'),
+      'section' => 'footer_section',
+      'type' => 'text',
+      ));
   }
+    
 
   add_action('customize_register', 'theme_31w_customize_register');
 ?>
