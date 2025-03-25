@@ -1,5 +1,7 @@
 <?php 
 // Modèle 404.php est pour une page 404 (erreur)
+// 
+// Fini
 ?>
 
 
