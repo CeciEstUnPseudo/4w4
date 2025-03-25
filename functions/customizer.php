@@ -199,6 +199,16 @@
         "type" => "text",
       ));
 
+      $wp_customize->add_setting('erreur_couleur_texte', array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+      ));
+  
+      $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'erreur_couleur_texte', array(
+        'label' => __('Couleur du texte', 'theme_31w'),
+        'section' => '404_section',
+      )));
+
 
   }
     
