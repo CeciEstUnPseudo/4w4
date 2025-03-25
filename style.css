@@ -777,24 +777,30 @@ footer {
   margin-top:0.5%;
 }
 
-
-.erreur__bouton--contenant{
-  margin:1% auto;
-  width:10%;
+.erreur__nav__titre{
+  margin-top:0.5%;
+  font-weight:bold;
 }
 
-.erreur__bouton--retour{
-  
-  width:100%;
+.erreur__nav{
+  margin:0.2% auto;
+  width:15%;
+}
+
+.erreur__menu > .menu > *{
+  width: 28%;
   font-size:1em;
+  margin:0% 0.5% 0% 0.5%;
   padding:1%;
   border-radius:5px;
   border:1px solid black;
   background-color:white;
   text-decoration:none;
+
+  text-align:center;
 }
 
-.erreur__bouton--retour:hover{
+.erreur__menu > .menu > *:hover{
   background-color:rgb(224, 224, 224);
   text-decoration:underline;
 }
@@ -810,19 +816,7 @@ footer {
   align-items:center;
 }
 
-.erreur__logos > * {
+.erreur__logos > a > * {
   width:25px;
   height:25px;
-}
-
-.erreur__logos__logo--1{
-
-}
-
-.erreur__logos__logo--2{
-
-}
-
-.erreur__logos__logo--3{
-
 }
