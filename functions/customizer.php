@@ -64,6 +64,7 @@
   //
 
   // Couleur du texte
+
     $wp_customize->add_setting('hero_couleur', array(
       'default' => '',
       'sanitize_callback' => 'esc_url_raw',
@@ -74,6 +75,9 @@
       'section' => 'hero_section',
     )));
   //
+
+
+  // Section Footer
 
   $wp_customize->add_section('footer_section', array(
     'title' => __('Footer Customisation', 'theme_31w'),
@@ -123,6 +127,79 @@
       'section' => 'footer_section',
       'type' => 'text',
       ));
+
+
+      // Section 404
+
+      $wp_customize->add_section("404_section", array(
+        "title" => __("404 Customisation", "theme_31w"),
+        "priority" => 30,
+      ));
+
+      $wp_customize->add_setting("erreur_404", array(
+        "default" => __("Erreur 404 (Message)", "theme_31w"),
+        "sanitize_callback" => "sanitize_text_field"
+      ));
+
+      $wp_customize->add_control("erreur_404", array(
+        "label" => __("Erreur 404", "theme_31w"),
+        "section" => "404_section",
+        "type" => "text",
+      ));
+
+      $wp_customize->add_setting("erreur_description", array(
+        "default" => __("Description de l'erreur", "theme_31w"),
+        "sanitize_callback" => 'sanitize_text_field'
+      ));
+
+      $wp_customize->add_control("erreur_description", array(
+        "label" => __("Description de l'erreur", "theme_31w"),
+        "section" => "404_section",
+        "type" => "text",
+      ));
+
+      $wp_customize->add_setting('erreur_logo1', array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+      ));
+    
+      $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'erreur_logo1', array(
+        'label' => __('Image du Logo (Reseau social 1)', 'theme_31w'),
+        'section' => '404_section',
+      )));
+
+      $wp_customize->add_setting('erreur_logo2', array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+      ));
+    
+      $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'erreur_logo2', array(
+        'label' => __('Image du Logo (Reseau social 2)', 'theme_31w'),
+        'section' => '404_section',
+      )));
+
+      $wp_customize->add_setting("erreur_logo3", array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+      ));
+    
+      $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'erreur_logo3', array(
+        'label' => __('Image du Logo (Reseau social 3)', 'theme_31w'),
+        'section' => '404_section',
+      )));
+
+      $wp_customize->add_setting("erreur_bouton_texte", array(
+        "default" => __("Bouton retour en arriere", "theme_31w"),
+        "sanitize_callback" => 'sanitize_text_field'
+      ));
+
+      $wp_customize->add_control("erreur_bouton_texte", array(
+        "label" => __("Bouton retour en arriere", "theme_31w"),
+        "section" => "404_section",
+        "type" => "text",
+      ));
+
+
   }
     
 
