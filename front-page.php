@@ -1,4 +1,4 @@
-<a?php
+<?php
     // Modèle front-page.php permet d'afficher la page d'accueil
     ?>
     <?php get_header() ?>
