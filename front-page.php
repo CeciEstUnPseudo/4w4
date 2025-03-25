@@ -15,8 +15,8 @@
         .hero_couleur{
             color: <?php echo $hero_text_color ?>;
         }
-
     </style>
+    
     <section class="hero" 
     style="
     background-image: url('<?php echo $hero_background; ?>')

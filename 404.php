@@ -8,21 +8,22 @@
     <?php $erreur_logo1 = get_theme_mod('erreur_logo1', ''); ?>
     <?php $erreur_logo2 = get_theme_mod('erreur_logo2', ''); ?>
     <?php $erreur_logo3 = get_theme_mod('erreur_logo3', ''); ?>
-    <?php $erreur_couleur_texte = get_theme_mod('erreur_couleur_texte', ''); ?>
     <?php $erreur_bouton_texte = get_theme_mod("erreur_bouton_texte", "") ?>
 
+    <?php $erreur_couleur_texte = get_theme_mod('erreur_couleur_texte', ''); ?>
 
-<h2>404.php</h2>
+    <style>
+        .erreur_couleur{
+            color: <?php echo $erreur_couleur_texte ?>;
+        }
+    </style>
+
 <?php get_header() ?>
-        <section class="erreur__contenu">
-          <h2 class="erreur__404">ERREUR 404</h2>
+        <section class="erreur__contenu erreur_couleur">
+          <h2 class="erreur__404"><?php echo $erreur_404 ?></h2>
           <p class="erreur__description"><?php echo $erreur_description ?></p>
-
-          <p class="erreur__message">
-            
-          </p>
           <div class="erreur__bouton">
-            <button class="erreur__bouton--retour">Retour à l'accueil</button>
+            <button class="erreur__bouton--retour erreur_couleur"><?php echo $erreur_bouton_texte ?></button>
           </div>
           <div class="erreur__logos">
             <img src="<?php echo $erreur_logo1 ?>" alt="logo1" class="erreur__logo">
