@@ -2,6 +2,36 @@
   font-family:"Montserrat";
 }
 
-.erreur__contenu{
+.erreur{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  
 
+  &__404{
+
+  }
+  &__description{
+    
+  }
+  &__bouton{
+    &--retour{
+
+    }
+  }
+  &__logos{
+    &--logo{
+      &--1{
+
+      }
+      &--2{
+
+      }
+      &--3{
+
+      }
+    }
+  }
+  
 }

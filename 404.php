@@ -19,16 +19,17 @@
     </style>
 
 <?php get_header() ?>
-        <section class="erreur__contenu erreur_couleur">
-          <h2 class="erreur__404"><?php echo $erreur_404 ?></h2>
+        <section class="erreur erreur_couleur">
+          <h1 class="erreur__404"><?php echo $erreur_404 ?></h1>
           <p class="erreur__description"><?php echo $erreur_description ?></p>
-          <div class="erreur__bouton">
-            <button class="erreur__bouton--retour erreur_couleur"><?php echo $erreur_bouton_texte ?></button>
+          <div class="erreur__bouton--contenant">
+            <button class="erreur__bouton--retour erreur_couleur" ><?php echo $erreur_bouton_texte ?></button>
+
           </div>
           <div class="erreur__logos">
-            <img src="<?php echo $erreur_logo1 ?>" alt="logo1" class="erreur__logo">
-            <img src="<?php echo $erreur_logo2 ?>" alt="logo2" class="erreur__logo">
-            <img src="<?php echo $erreur_logo3 ?>" alt="logo3" class="erreur__logo">
+            <img src="<?php echo $erreur_logo1 ?>" alt="logo1" class="erreur__logos__logo--1">
+            <img src="<?php echo $erreur_logo2 ?>" alt="logo2" class="erreur__logos__logo--2">
+            <img src="<?php echo $erreur_logo3 ?>" alt="logo3" class="erreur__logos__logo--3">
           </div>
         </section>
 
