@@ -21,6 +21,14 @@
         .erreur_couleur{
             color: <?php echo $erreur_couleur_texte ?>;
         }
+
+        .erreur__recherche--input::placeholder{
+            color: <?php echo $erreur_couleur_texte ?>;
+        }
+
+        .erreur__menu > .menu > *{
+            background-color: <?php echo $erreur_couleur_texte ?>;
+        }
     </style>
 
 <?php get_header() ?>
@@ -38,7 +46,6 @@
                         'menu'                 => '404',
                         'container'            => 'nav',
                         'container_class'      => 'erreur__menu',
-
             ));
           ?>
 
