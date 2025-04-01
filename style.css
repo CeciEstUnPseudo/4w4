@@ -766,15 +766,28 @@ footer {
   justify-content:center;
   align-items:center;
   margin:auto;
-  margin-top:10%;
+  text-align:center;
+  height:100vh;
+
+  background-size: cover;
+  background-position: center;
 }
 
 .erreur__404{
-  font-size:2em;
+  width:60%;
+  font-size:4.2em;
+  font-weight:bold;
+
+  background-color:rgba(255, 255, 255, 0.158);
 }
 
 .erreur__description{
-  margin-top:0.5%;
+  width:60%;
+  margin-top:2.5%;
+  padding:0.5%;
+
+  font-size:12px;
+  background-color:rgba(255, 255, 255, 0.158);
 }
 
 .erreur__nav__titre{
@@ -793,8 +806,9 @@ footer {
   margin:0% 0.5% 0% 0.5%;
   padding:1%;
   border-radius:5px;
+  border:none;
   border:1px solid black;
-  background-color:white;
+  color:black;
   text-decoration:none;
 
   text-align:center;
@@ -805,7 +819,35 @@ footer {
   text-decoration:underline;
 }
 
-.erreur__logos{
+.erreur__recherche{
+  margin-top:2%;
+  width:100%;
+  height:5vh;
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items:center;
+  padding:0.5%;
+  background-color:rgba(255, 255, 255, 0.158);
+}
+
+.erreur__recherche--input{
+  width:100%;
+  height:100%;
+  font-size:1.1em;
+  text-align:start;
+  padding-left:1em;
+  border:none;
+  outline:none;
+  mix-blend-mode: multiply;
+  color:red;
+}
+
+.erreur__recherche--input::placeholder{
+  color:red;
+}
+
+/* .erreur__logos{
   margin-top:19%;
   margin-bottom:1%;
 
@@ -819,4 +861,4 @@ footer {
 .erreur__logos > a > * {
   width:25px;
   height:25px;
-}
+} */

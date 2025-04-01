@@ -7,16 +7,15 @@
 
     <?php $erreur_404 = get_theme_mod('erreur_404', ''); ?>
     <?php $erreur_description = get_theme_mod('erreur_description', ''); ?>
-    <?php $erreur_logo1 = get_theme_mod('erreur_logo1', ''); ?>
-    <?php $erreur_logo2 = get_theme_mod('erreur_logo2', ''); ?>
-    <?php $erreur_logo3 = get_theme_mod('erreur_logo3', ''); ?>
-
-    <?php $erreur_logo1_lien = get_theme_mod('erreur_logo1_lien', ''); ?>
-    <?php $erreur_logo2_lien = get_theme_mod('erreur_logo2_lien', ''); ?>
-    <?php $erreur_logo3_lien = get_theme_mod('erreur_logo3_lien', ''); ?>
     <?php $erreur_menu_titre = get_theme_mod("erreur_menu_titre", "") ?>
 
+    <?php $erreur_bouton_retour = get_theme_mod("erreur_bouton_retour", "") ?>
+
     <?php $erreur_couleur_texte = get_theme_mod('erreur_couleur_texte', ''); ?>
+
+
+    <!-- Variables extras pour l'examen intra -->
+     <?php $erreur_background = get_theme_mod("erreur_background", "") ?>
 
     <style>
         .erreur_couleur{
@@ -25,32 +24,46 @@
     </style>
 
 <?php get_header() ?>
-        <section class="erreur erreur_couleur">
+        <section class="erreur erreur_couleur" style="
+    background-image: url('<?php echo $erreur_background; ?>')
+    ">
+
           <h1 class="erreur__404"><?php echo $erreur_404 ?></h1>
           <p class="erreur__description"><?php echo $erreur_description ?></p>
 
-          <p class="erreur__nav__titre"><?php echo $erreur_menu_titre ?></p>
+          <!-- Retour à l'accueil (page front-page) -->
+          <a href="<?php echo get_home_url() ?>" class="erreur__nav__accueil"><?php echo $erreur_bouton_retour ?></a>
           <div class="erreur__nav">
             <?php wp_nav_menu(array(
                         'menu'                 => '404',
                         'container'            => 'nav',
                         'container_class'      => 'erreur__menu',
+                        'style'                => 'background-color: <?php echo $erreur_couleur_texte ?>',
+
             ));
           ?>
 
+<!-- Give the border-bottom of this form a 2px solid and erreur_couleur_texte color -->
+          <form 
+          class="erreur__recherche" 
+          role="search" 
+          method="get"  
+          action="<?php echo esc_url( home_url( '/' ) ); ?>"
+          style="border-bottom: 2px solid <?php echo $erreur_couleur_texte ?>"
+          >
+            <input 
+            class="erreur__recherche--input" 
+            type="search" 
+            placeholder="Rechercher..." 
+            id="erreur__test"
+            value="<?php echo get_search_query(); ?>" 
+            name="s" 
+            />
 
-          </div>
-          <div class="erreur__logos">
-            <!-- Chaque balise est dans un a href pour que, une fois cliqué, nous soyons amener à la page web -->
-            <a href="<?php echo $erreur_logo1_lien ?>">
-              <img src="<?php echo $erreur_logo1 ?>" alt="logo3" class="erreur__logos__logo--3">
-            </a>
-            <a href="<?php echo $erreur_logo2_lien ?>">
-              <img src="<?php echo $erreur_logo2 ?>" alt="logo3" class="erreur__logos__logo--3">
-            </a>
-            <a href="<?php echo $erreur_logo3_lien ?>">
-              <img src="<?php echo $erreur_logo3 ?>" alt="logo3" class="erreur__logos__logo--3">
-            </a>
+          </form>
+
+
+
           </div>
         </section>
 
