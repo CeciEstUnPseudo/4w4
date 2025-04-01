@@ -778,6 +778,7 @@ footer {
   width:60%;
   font-size:clamp(2em, 10vw, 4em);
   font-weight:bold;
+  padding:0.5%;
 
   background-color:rgba(255, 255, 255, 0.158);
 }
@@ -845,7 +846,7 @@ footer {
 }
 
 .erreur__menu > .menu > *{
-  width: 100px;
+  width: fit-content;
   font-size:clamp(0.5em, 1.5vw, 1em);
   margin:0% 0.5% 0% 0.5%;
   padding:0.5% 1% 1% 1%;
@@ -892,27 +893,32 @@ footer {
 /* Version tablette */
 
 @media screen and (max-width: 1024px) {
+  .erreur{
+    height:150vh;
+  }
+
   .erreur__404{
     width:50%;
+    height:fit-content;
   }
 
   .erreur__description{
     width:50%;
-    height:10vh;
+    height:fit-content;
     text-align:center;
-    font-size:clamp(0.4em, 1.5vw, 1.1em);
+    font-size:clamp(1.5em, 1.5vw, 2em);
   }
 
   .erreur__nav__accueil{
     width:35%;
-    height:5vh;
+    height:12vh;
     text-align:center;
     font-size:clamp(2em, 1.5vw, 3em);
     padding:0.8% 1% 1% 1%;
   }
 
   .erreur__menu > .menu{
-    width:50%;
+    width:60%;
     display:flex;
     flex-direction:row;
     flex-wrap:wrap;
@@ -921,9 +927,9 @@ footer {
   }
 
   .erreur__menu > .menu > *{
-    width: 45%;
-    height:4vh;
-    font-size:clamp(2em, 1.5vw, 2em);
+    width: fit-content;
+    height:fit-content;
+    font-size:clamp(2.5em, 1.5vw, 3em);
     margin:1%;
   }
 
@@ -939,5 +945,47 @@ footer {
 
 /* Version mobile */
 @media screen and (max-width:520px){
+  .erreur__404{
+    width:80%;
+    height:fit-content;
+    font-size:clamp(6em, 1.5vw, 7em);
+  }
 
+  .erreur__description{
+    width:80%;
+    height:fit-content;
+    text-align:center;
+    font-size:clamp(2em, 1.5vw, 2em);
+  }
+
+  .erreur__nav__accueil{
+    width:85%;
+    height:8vh;
+    text-align:center;
+    font-size:clamp(4em, 1.5vw, 5em);
+    padding:0.8% 1% 1% 1%;
+  }
+
+  .erreur__menu > .menu{
+    width:80%;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+  }
+
+  .erreur__menu > .menu > *{
+    font-size:clamp(4em, 1.5vw, 5em);
+    margin:1%;
+  }
+
+  .erreur__recherche{
+    width:40%;
+    height:5vh;
+  }
+
+  .erreur__recherche--input{
+    font-size:clamp(1.5em, 1.5vw, 2em);
+  }
 }
