@@ -32,13 +32,12 @@
           <p class="erreur__description"><?php echo $erreur_description ?></p>
 
           <!-- Retour à l'accueil (page front-page) -->
-          <a href="<?php echo get_home_url() ?>" class="erreur__nav__accueil"><?php echo $erreur_bouton_retour ?></a>
+          <a href="<?php echo get_home_url() ?>" class="erreur__nav__accueil" style="background-color: <?php echo $erreur_couleur_texte ?>"><?php echo $erreur_bouton_retour ?></a>
           <div class="erreur__nav">
             <?php wp_nav_menu(array(
                         'menu'                 => '404',
                         'container'            => 'nav',
                         'container_class'      => 'erreur__menu',
-                        'style'                => 'background-color: <?php echo $erreur_couleur_texte ?>',
 
             ));
           ?>
@@ -50,12 +49,14 @@
           method="get"  
           action="<?php echo esc_url( home_url( '/' ) ); ?>"
           style="border-bottom: 2px solid <?php echo $erreur_couleur_texte ?>"
+          style="color: <?php echo $erreur_couleur_texte ?>"
           >
+            <!-- Select the ::placeholder and give it a style -->
             <input 
             class="erreur__recherche--input" 
             type="search" 
             placeholder="Rechercher..." 
-            id="erreur__test"
+            
             value="<?php echo get_search_query(); ?>" 
             name="s" 
             />

@@ -767,6 +767,7 @@ footer {
   align-items:center;
   margin:auto;
   text-align:center;
+  font-family: "Montserrat";
   height:100vh;
 
   background-size: cover;
@@ -775,7 +776,7 @@ footer {
 
 .erreur__404{
   width:60%;
-  font-size:4.2em;
+  font-size:clamp(2em, 10vw, 4em);
   font-weight:bold;
 
   background-color:rgba(255, 255, 255, 0.158);
@@ -786,7 +787,8 @@ footer {
   margin-top:2.5%;
   padding:0.5%;
 
-  font-size:12px;
+  font-weight:bold;
+  font-size:clamp(0.4em, 1.5vw, 0.9em);
   background-color:rgba(255, 255, 255, 0.158);
 }
 
@@ -797,18 +799,59 @@ footer {
 
 .erreur__nav{
   margin:0.2% auto;
+  width:60%;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+.erreur__nav__accueil{
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items:center;
+  text-decoration:none;
+  color:rgb(71, 154, 209);
   width:15%;
+  height:7vh;
+  border-radius:5px;
+  text-align:center;
+  font-weight:bold;
+  text-wrap:nowrap;
+  font-size:clamp(1em, 1.5vw, 2em);
+  padding:0.8% 1% 1% 1%;
+  margin-top:1%;
+}
+
+.erreur__menu{
+  width:100%;
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items:center;
+
+  margin-top:3%;
+}
+
+.erreur__menu > .menu{
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items:center;
+  font-size:clamp(0.7em, 1.5vw, 1.2em);
+  text-align:center;
 }
 
 .erreur__menu > .menu > *{
-  width: 28%;
-  font-size:1em;
+  width: 100px;
+  font-size:clamp(0.5em, 1.5vw, 1em);
   margin:0% 0.5% 0% 0.5%;
-  padding:1%;
+  padding:0.5% 1% 1% 1%;
   border-radius:5px;
-  border:none;
-  border:1px solid black;
   color:black;
+  background-color: #e2bf34;
   text-decoration:none;
 
   text-align:center;
@@ -821,8 +864,9 @@ footer {
 
 .erreur__recherche{
   margin-top:2%;
-  width:100%;
+  width:30%;
   height:5vh;
+
   display:flex;
   flex-direction:row;
   justify-content:center;
@@ -834,31 +878,66 @@ footer {
 .erreur__recherche--input{
   width:100%;
   height:100%;
-  font-size:1.1em;
+  font-size:clamp(0.5em, 1.5vw, 1em);
   text-align:start;
   padding-left:1em;
   border:none;
   outline:none;
-  mix-blend-mode: multiply;
-  color:red;
+  background-color:rgba(255, 255, 255, 0);
 }
 
 .erreur__recherche--input::placeholder{
-  color:red;
+  color: #e2bf34;
+}
+/* Version tablette */
+
+@media screen and (max-width: 1024px) {
+  .erreur__404{
+    width:50%;
+  }
+
+  .erreur__description{
+    width:50%;
+    height:10vh;
+    text-align:center;
+    font-size:clamp(0.4em, 1.5vw, 1.1em);
+  }
+
+  .erreur__nav__accueil{
+    width:35%;
+    height:5vh;
+    text-align:center;
+    font-size:clamp(2em, 1.5vw, 3em);
+    padding:0.8% 1% 1% 1%;
+  }
+
+  .erreur__menu > .menu{
+    width:50%;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+  }
+
+  .erreur__menu > .menu > *{
+    width: 45%;
+    height:4vh;
+    font-size:clamp(2em, 1.5vw, 2em);
+    margin:1%;
+  }
+
+  .erreur__recherche{
+    width:40%;
+    height:5vh;
+  }
+
+  .erreur__recherche--input{
+    font-size:clamp(1.5em, 1.5vw, 2em);
+  }
 }
 
-/* .erreur__logos{
-  margin-top:19%;
-  margin-bottom:1%;
+/* Version mobile */
+@media screen and (max-width:520px){
 
-  width:10%;
-  display:flex;
-  flex-direction:row;
-  justify-content:space-around;
-  align-items:center;
 }
-
-.erreur__logos > a > * {
-  width:25px;
-  height:25px;
-} */
