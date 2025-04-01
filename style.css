@@ -907,7 +907,7 @@ footer {
 
   .erreur__nav__accueil{
     width:35%;
-    height:12vh;
+    height:9vh;
     text-align:center;
     font-size:clamp(2em, 1.5vw, 3em);
     padding:0.8% 1% 1% 1%;
@@ -956,7 +956,7 @@ footer {
 
   .erreur__nav__accueil{
     width:85%;
-    height:8vh;
+    height:5vh;
     text-align:center;
     font-size:clamp(4em, 1.5vw, 5em);
     padding:0.8% 1% 1% 1%;
