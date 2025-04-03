@@ -115,6 +115,23 @@
         </div>
     </section>
 
+<!-- /////////////////////////////////////////////// -->
+<!-- JS  | Destination REST-API -->
+<!-- Boutons générées hors de la liste, mais le destination.js va generer les articles dans la div destination__list -->
+<?php categories_liste("destination"); ?>
+<section class="destination">
+    <h2 class="destination__titre">Articles de la catégorie</h2>
+    <div class="destination__list">
+    </div>
+</section>
+
+
+<!-- /////////////////////////////////////////////// -->
+
+
+
+
+
     <?php get_footer() ?>
     </body>
 
