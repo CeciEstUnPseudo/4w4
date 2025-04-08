@@ -985,3 +985,106 @@ footer {
     font-size:clamp(1.5em, 1.5vw, 2em);
   }
 }
+
+
+/* Les listes d'articles selon la catégorie */
+/* Boutons */
+.articles__boutons{
+  width:40%;
+  display:flex;
+  flex-direction:row;
+  justify-content:space-around;
+  align-items:center;
+  margin:2% auto;
+}
+
+.articles__bouton{
+  
+  width:fit-content;
+  height:5vh;
+  padding:0.5% 1% 1% 1%;
+  border-radius:5px;
+  text-align:center;
+  font-size:clamp(0.5em, 1.5vw, 1em);
+  color:black;
+  text-decoration:none;
+  background-color:white;
+}
+
+.articles__bouton:hover{
+  background-color:rgb(224, 224, 224);
+  text-decoration:underline;
+}
+
+.bouton-actif{
+  background-color:rgb(159, 228, 228);
+  color:black;
+}
+
+.destination{
+  margin-bottom:3%;
+
+  font-family:"Montserrat";
+}
+
+.destination__titre{
+  width:fit-content;
+  margin:auto;
+}
+
+.destination__list{
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  justify-content:space-around;
+  align-items:center;
+}
+
+.article__cacher{
+  margin:1%;
+  border:1px solid black;
+
+  width:30%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+}
+
+.article__cacher__titre{
+  width:fit-content;
+  font-size:Clamp(0.5em, 1.5vw, 1em);
+}
+
+.article__cacher__titre:hover{
+  background-color: rgb(240, 240, 240);
+  cursor:pointer;
+}
+
+.article__cacher__info{
+  height:0;
+  opacity:0;
+  font-size:0;
+  padding:1%;
+
+  transition: all 0.5s ease-in-out;
+}
+
+.visible{
+  height:100%;
+  opacity:100%;
+  font-size:Clamp(0.25em, 1.5vw, 0.80em);
+
+  /* Les changements de cette classe sont pas animation */
+  transition: all 0.5s ease-in-out;
+}
+
+.article__cacher__info-plus{
+  font-size:Clamp(0.15em, 1.5vw, 0.75em);
+}
+
+.article__cacher__info-plus:hover{
+  background-color: rgb(240, 240, 240);
+  cursor:pointer;
+}

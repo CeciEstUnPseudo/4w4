@@ -20,15 +20,19 @@ function categories_liste($parent_slug){
     'hide_empty' => true, // Ne pas afficher les catégories vides
     ));
 
+    // Avoir tous les boutons de sous-catégorie dans un même conteneur
+    echo '<div class="articles__boutons"></div>';
   // Vérifier si des sous-catégories existent
   if (!empty($sous_categories)) {
     echo "<script>console.log('Sous-catégories trouvées: " . json_encode($sous_categories) . "');</script>";
     // Boucle à travers les sous-catégories
     foreach ($sous_categories as $sous_categorie) {
       // Afficher le nom de la sous-catégorie
-      echo "<script>console.log('Sous-catégorie: " . $sous_categorie->name . "');</script>";
-      // Créé un élément de liste pour chaque sous-catégorie deux classes: categorie__ul__li
-      echo '<button  data-category-id="' . esc_html($sous_categorie->term_id) . '" class="categorie__ul__li">' . esc_html($sous_categorie->name) . '</button>';
+
+      echo "<script>console.log('Sous-catégorie: " . $sous_categorie->name .  "');</script>";
+      // Créé un élément pour chaque sous-catégorie (bouton)
+      
+      echo '<button  data-category-id="' . esc_html($sous_categorie->term_id) . '" class="articles__bouton">' . esc_html($sous_categorie->name . "") . '</button>';
 
     }
   } else {
