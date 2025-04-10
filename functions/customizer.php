@@ -52,15 +52,18 @@
 
   // Image background zone Hero
 
-  $wp_customize->add_setting('hero_background', array(
-    'default' => '',
-    'sanitize_callback' => 'esc_url_raw',
-  ));
+  for($i=0;$i<3;$i++){
+    $wp_customize->add_setting('hero_background_' . $i, array(
+      'default' => '',
+      'sanitize_callback' => 'esc_url_raw',
+    ));
+  
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_background_' . $i, array(
+      'label' => __('Image en background_' . ($i+1), 'theme_31w'),
+      'section' => 'hero_section',
+    )));
+  }
 
-  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_background', array(
-    'label' => __('Image en background', 'theme_31w'),
-    'section' => 'hero_section',
-  )));
   //
 
   // Couleur du texte

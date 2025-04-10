@@ -1,5 +1,6 @@
 <?php
 include_once get_template_directory() . "/functions/genere-list-categorie.php";
+include_once get_template_directory() . "/functions/customizer.php";
 
 // Définir le chemin vers le dossier "functions"
 $functions_dir = get_template_directory() . '/functions/';
@@ -31,10 +32,6 @@ function mon_theme_supports() {
 add_action( 'after_setup_theme', 'mon_theme_supports' );
 
 
-
-
-
-
 function theme_tp_enqueue_styles() { 
 wp_enqueue_style('normalize', get_template_directory_uri() . '/normalize.css'); 
 wp_enqueue_style('main-style', get_stylesheet_uri()); 
@@ -52,7 +49,18 @@ function enqueue_custom_scripts() {
       '/js/destination.js'),
       true
   );
+
+  wp_enqueue_script(
+    'carrousel_restapi',
+    get_template_directory_uri() . '/js/carrousel.js',
+    array(),
+    filemtime(get_template_directory() . 
+    '/js/carrousel.js'),
+    true
+);
 }
+
+
 add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
 
 

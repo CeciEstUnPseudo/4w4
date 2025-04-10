@@ -1,138 +1,62 @@
-<?php
-    // Modèle front-page.php permet d'afficher la page d'accueil
-    ?>
-    <?php get_header() ?>
+<?php // Modèle front-page.php permet d'afficher la page d'accueil ?>
+    <!-- Section Header -->
+        <?php get_header() ?>
+    <!--  -->
 
+    <!-- Section Hero -->
+        <?php echo get_template_part("/gabarit/hero"); ?>
+    <!--  -->
 
-    <?php $hero_auteur = get_theme_mod('hero_auteur', ''); ?>
-    <?php $hero_background = get_theme_mod('hero_background', ''); ?>
-    <?php $hero_text_color = get_theme_mod('hero_couleur', ''); ?>
-    <?php $hero_email = get_theme_mod('hero_mail', ''); ?>
-    <?php $hero_lieu = get_theme_mod('hero_lieu', ''); ?>
-    <?php $hero_telephone = get_theme_mod('hero_telephone', ''); ?>
+    <!-- Section Galerie -->
+        <section class="galerie">
+            <h2 class="galerie__titre hero_couleur">Nos destinations favorites</h2>
 
-    <style>
-        .hero_couleur{
-            color: <?php echo $hero_text_color ?>;
-        }
-    </style>
-    
-    <section class="hero" 
-    style="
-    background-image: url('<?php echo $hero_background; ?>')
-    ">
+            <?php if (in_category("galerie")) { ?>
+                <figure class="galerie__figure">
+                    <?php the_content();  ?>
+                </figure>
+            <?php } ?>
 
-        <div class="hero__contenu">
-            <h1 class="hero__titre hero_couleur">
-                <?php echo bloginfo("name"); ?>
-                <!-- En haut va prendre la valeur de "Site Title" des settings -->
-            </h1>
-            <p class="hero__description hero_couleur"> <?php bloginfo("description") ?>
+        </section>
+    <!--  -->
 
-            </p>
+    <!-- Section Populaire (articles) -->
+        <section class="populaire">
+            <div class="populaire__contenant">
+                <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                        <?php if (in_category("galerie")) {
+                        } else { ?>
 
-            <?php  ?>
+                            <article class="populaire__article">
 
-            <p class="hero__addresse-electronique hero_couleur"><?php echo $hero_email ?></p>
-            <p class="hero__addresse-physique hero_couleur"><?php echo $hero_lieu ?></p>
-            <p class="hero__telephone hero_couleur"><?php echo $hero_telephone ?></p>
-            <a href="" class="hero__courriel"></a>
-            <button class="hero__bouton">S'INSCRIRE</button>
-            <div class="hero__icones-box">
-                <img class="hero__icones" src="https://s2.svgbox.net/social.svg?ic=facebook&color=000" width="32" height="32">
-                <img class="hero__icones" src="https://s2.svgbox.net/social.svg?ic=instagram&color=000" width="32" height="32">
+                                <div class="carte__contenu">
+                                    <?php get_template_part("gabarit/carte") ?>
+                                </div>
+
+                            </article>
+
+                        <?php } ?>
+
+                <?php endwhile;
+                endif; ?>
             </div>
-            <p class="hero_couleur">Auteur: <?php echo $hero_auteur; ?></p>
-        </div>
-    </section>
+        </section>
+    <!--  -->
 
-    <section class="formulaire">
-        <div class="formulaire__section">
-            <p class="formulaire__section--titre hero_couleur">
-                Nom
-            </p>
-            <form action="" class="formulaire__section--form">
-                <input type="text" value="Écrivez votre nom" class="formulaire__section--input">
-            </form>
-        </div>
-        <div class="formulaire__section">
-            <p class="formulaire__section--titre hero_couleur">
-                Prénom
-            </p>
-            <form action="" class="formulaire__section--form">
-                <input type="text" value="Écrivez votre prénom" class="formulaire__section--input">
-            </form>
-        </div>
-        <div class="formulaire__section">
-            <p class="formulaire__section--titre hero_couleur">
-                Courriel
-            </p>
-            <form action="" class="formulaire__section--form">
-                <input type="text" value="Écrivez votre courriel" class="formulaire__section--input">
-            </form>
-        </div>
-        <div class="formulaire__section">
-            <p class="formulaire__section--titre hero_couleur">
-                Téléphone
-            </p>
-            <form action="" class="formulaire__section--form">
-                <input type="text" value="Écrivez votre téléphone" class="formulaire__section--input">
-            </form>
-        </div>
+    <!-- Section Articles (au choix selon la catégorie) -->
+        <!-- JS  | Destination REST-API -->
+        <!-- Boutons générées hors de la liste, mais le destination.js va generer les articles dans la div destination__list -->
+        <?php categories_liste("destination"); ?>
+        <section class="destination">
+            <h2 class="destination__titre">Articles de la catégorie</h2>
+            <div class="destination__list">
+            </div>
+        </section>
+    <!--  -->
 
-        <button class="formulaire__bouton hero_couleur">S'INSCRIRE</button>
-    </section>
-
-    <section class="galerie">
-        <h2 class="galerie__titre hero_couleur">Nos destinations favorites</h2>
-
-        <?php if (in_category("galerie")) { ?>
-            <figure class="galerie__figure">
-                <?php the_content();  ?>
-            </figure>
-        <?php } ?>
-
-    </section>
-
-    <section class="populaire">
-        <div class="populaire__contenant">
-            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                    <?php if (in_category("galerie")) {
-                    } else { ?>
-
-                        <article class="populaire__article">
-
-                            <div class="carte__contenu">
-                                <?php get_template_part("gabarit/carte") ?>
-                            </div>
-
-                        </article>
-
-                    <?php } ?>
-
-            <?php endwhile;
-            endif; ?>
-        </div>
-    </section>
-
-<!-- /////////////////////////////////////////////// -->
-<!-- JS  | Destination REST-API -->
-<!-- Boutons générées hors de la liste, mais le destination.js va generer les articles dans la div destination__list -->
-<?php categories_liste("destination"); ?>
-<section class="destination">
-    <h2 class="destination__titre">Articles de la catégorie</h2>
-    <div class="destination__list">
-    </div>
-</section>
-
-
-<!-- /////////////////////////////////////////////// -->
-
-
-
-
-
-    <?php get_footer() ?>
+    <!-- Section Footer -->
+        <?php get_footer() ?>
+    <!--  -->
     </body>
 
     </html>
