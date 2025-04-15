@@ -17,10 +17,7 @@ boutons.forEach(function (bouton) {
       bouton.classList.add('bouton-actif'); // Ajouter la classe active au bouton cliqué
     //
 
-    // Enlever les anciens articles de la liste
-      const destinationList = document.querySelector('.destination__list');
-      destinationList.innerHTML = ""; // On vide la liste avant d'ajouter les nouveaux articles
-    //
+
 
     // Affichage des articles d'une catégorie spécifique dans une liste
 
@@ -34,7 +31,9 @@ boutons.forEach(function (bouton) {
         .then(response => response.json())
         .then(data => {
           const destinationList = document.querySelector('.destination__list');
-
+          // Enlever les anciens articles de la liste
+          destinationList.innerHTML = ""; // On vide la liste avant d'ajouter les nouveaux articles
+          //
           data.forEach(article => {
             const articleElement = document.createElement('div'); // Créer un nouvel élément div pour chaque article et lui mettre (innerHTML) les 3 éléments
             articleElement.classList.add('article__cacher'); // Ajouter la classe article__cacher pour le style
@@ -50,10 +49,15 @@ boutons.forEach(function (bouton) {
             // });
 
             // On selectionne le h3 de articleElement
+
+          
+
+
             const articlesTitres = articleElement.querySelectorAll('.article__cacher__titre'); // On prend le titre de l'article
             articlesTitres.forEach(function (titre) { // On met un event listener pour chaque titre
               titre.addEventListener("click", function(){
                 const info = titre.nextElementSibling; // On prend l'élément suivant le titre car on ne veut pas toggle tous les titres / tous les articles + on n'utilise pas le parent pour le addEventListener
+                console.log("Click");
                 info.classList.toggle("visible"); // On toggle la classe visible pour montrer/cacher le resumé (contenu)
               })
             })

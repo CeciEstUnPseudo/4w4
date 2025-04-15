@@ -24,10 +24,10 @@
       <div class="hero__carrousel"
         style="background-image: url('<?php echo $hero_background[0]; ?>')">
       </div>
-      <div class="hero__carrousel"
+      <div class="hero__carrousel carrouselInvisible"
         style="background-image: url('<?php echo $hero_background[1]; ?>')">
       </div>
-      <div class="hero__carrousel"
+      <div class="hero__carrousel carrouselInvisible"
         style="background-image: url('<?php echo $hero_background[2]; ?>')">
       </div>
     <!--  -->
@@ -54,7 +54,14 @@
           <img class="hero__icones" src="https://s2.svgbox.net/social.svg?ic=instagram&color=000" width="32" height="32">
         </div>
         <p class="hero_couleur">Auteur: <?php echo $hero_auteur; ?></p>
+
+        <div class="hero__carrousel-boutonsRadio">
+          <input type="radio" name="carrousel" data-id_carrousel="0" class="carrousel__radio" checked>
+          <input type="radio" name="carrousel" data-id_carrousel="1" class="carrousel__radio">
+          <input type="radio" name="carrousel" data-id_carrousel="2" class="carrousel__radio">
+        </div>
       </div>
+
     <!--  -->
 
     </section>
