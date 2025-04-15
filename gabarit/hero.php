@@ -3,8 +3,9 @@
     <?php $hero_email = get_theme_mod('hero_mail', ''); ?>
     <?php $hero_lieu = get_theme_mod('hero_lieu', ''); ?>
     <?php $hero_telephone = get_theme_mod('hero_telephone', ''); ?>
+    <?php $hero_tailleCarrousel = get_theme_mod('hero_tailleCarrousel', '1'); ?>
     <?php
-        for($i=0;$i<3;$i++){
+        for($i=0;$i<$hero_tailleCarrousel;$i++){
           $hero_background[$i] = get_theme_mod('hero_background_'.$i, '');
         }
     ?>
@@ -21,15 +22,19 @@
     <section class="hero">
 
     <!-- Carrousel -->
+     <div class="hero__carrousel-parent">
       <div class="hero__carrousel"
-        style="background-image: url('<?php echo $hero_background[0]; ?>')">
-      </div>
-      <div class="hero__carrousel carrouselInvisible"
-        style="background-image: url('<?php echo $hero_background[1]; ?>')">
-      </div>
-      <div class="hero__carrousel carrouselInvisible"
-        style="background-image: url('<?php echo $hero_background[2]; ?>')">
-      </div>
+          style="background-image: url('<?php echo $hero_background[0]; ?>')">
+        </div>
+
+        <?php
+          for ($j = 1; $j < $hero_tailleCarrousel; $j++) { 
+        ?>
+        <div class="hero__carrousel carrouselInvisible" style="background-image: url('<?php echo $hero_background[$j];?>')" >
+        </div>
+        <?php }  ?>
+
+     </div>
     <!--  -->
 
     <!-- Contenu -->
@@ -57,9 +62,16 @@
 
         <div class="hero__carrousel-boutonsRadio">
           <input type="radio" name="carrousel" data-id_carrousel="0" class="carrousel__radio" checked>
-          <input type="radio" name="carrousel" data-id_carrousel="1" class="carrousel__radio">
-          <input type="radio" name="carrousel" data-id_carrousel="2" class="carrousel__radio">
+          <!-- <input type="radio" name="carrousel" data-id_carrousel="1" class="carrousel__radio">
+          <input type="radio" name="carrousel" data-id_carrousel="2" class="carrousel__radio"> -->
+
+            <?php
+            for ($j = 1; $j < $hero_tailleCarrousel; $j++) { 
+            ?>
+                      <input type="radio" name="carrousel" data-id_carrousel="<?php echo $j ;?>" class="carrousel__radio">
+            <?php }  ?>
         </div>
+
       </div>
 
     <!--  -->

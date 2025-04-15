@@ -50,9 +50,22 @@
     'type' => 'text',
   ));
 
+  $wp_customize->add_setting('hero_tailleCarrousel', array(
+    'default' => __('Entrez une valeur numérique', 'theme_31w'),
+    'sanitize_callback' => 'sanitize_text_field'
+  ));
+
+  $wp_customize->add_control('hero_tailleCarrousel', array(
+    'label' => __('Hero Taille Carrousel (doit refresh la page manuellement)', 'theme_31w'),
+    'section' => 'hero_section',
+    'type' => 'number',
+  ));
+
+  $hero_tailleCarrousel = get_theme_mod('hero_tailleCarrousel', '1');
+
   // Image background zone Hero
 
-  for($i=0;$i<3;$i++){
+  for($i=0;$i<$hero_tailleCarrousel;$i++){
     $wp_customize->add_setting('hero_background_' . $i, array(
       'default' => '',
       'sanitize_callback' => 'esc_url_raw',
