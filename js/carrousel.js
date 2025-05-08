@@ -17,6 +17,10 @@
        * 3: Afficher la nouvelle image
        */
         imagesCarrousel[i].classList.add('carrouselInvisible'); // On cache l'ancienne image
+
+        animationContenu();
+
+
         i = bouton.getAttribute('data-id_carrousel'); // On récupère l'index de la nouvelle image à afficher
         imagesCarrousel[i].classList.remove('carrouselInvisible'); // On affiche la nouvelle image (correspondante au bouton cliqué)
       })
@@ -33,6 +37,8 @@
        * 4: Afficher la nouvelle image
        */
       imagesCarrousel[i].classList.add('carrouselInvisible'); // On cache l'ancienne image (utilisation de "transition" dans la classe CSS pour avoir une sorte d'animation)
+
+      animationContenu();
 
       // Boucle à travers les images
       i++;
@@ -53,3 +59,27 @@
     }, 5000);
   // // //
 })()
+
+// Créé une fonction
+function animationContenu(){
+  console.log("Animation du contenu");
+
+  const heroContenu = document.querySelector('.hero__contenu');
+  const heroIcones = document.querySelector(".hero__icones-box");
+
+  // On les rend invisible
+  heroContenu.classList.toggle("invisible"); // Animation du contenu
+  heroIcones.classList.toggle("invisible"); // Animation des icônes
+
+  setTimeout(() => { // On les déplace alors qu'ils sont invisible
+    heroContenu.classList.toggle("hero__contenu-variante"); // Animation du contenu
+    heroIcones.classList.toggle("hero__icones-box-variante"); // Animation des icônes
+  }, 500);
+
+
+  // Après 0.5s, on re-toggle l'invisibilité
+  setTimeout(() => {
+    heroContenu.classList.toggle("invisible"); // Animation du contenu
+    heroIcones.classList.toggle("invisible"); // Animation des icônes
+  }, 1000);
+}

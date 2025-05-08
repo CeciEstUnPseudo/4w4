@@ -53,7 +53,6 @@
         <p class="hero__addresse-physique hero_couleur"><?php echo $hero_lieu ?></p>
         <p class="hero__telephone hero_couleur"><?php echo $hero_telephone ?></p>
         <a href="" class="hero__courriel"></a>
-        <button class="hero__bouton">S'INSCRIRE</button>
         <div class="hero__icones-box">
           <img class="hero__icones" src="https://s2.svgbox.net/social.svg?ic=facebook&color=000" width="32" height="32">
           <img class="hero__icones" src="https://s2.svgbox.net/social.svg?ic=instagram&color=000" width="32" height="32">
