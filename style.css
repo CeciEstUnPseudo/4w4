@@ -785,6 +785,7 @@ footer {
     width:70%;
     height:80vh;
     margin:2% auto;
+    font-size:x-small;
 
     border-radius:20px;
     border: 1px solid black;
@@ -851,6 +852,12 @@ footer {
     margin-left:2%;
     padding-left:5%;
     border-left:1px solid black;
+  }
+
+  .single__informations{
+    margin-top:10%;
+    justify-self:flex-end;
+    font-size:7px;
   }
 
 
