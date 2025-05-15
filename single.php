@@ -29,21 +29,21 @@
                         <p>Temp. Max: <?php echo the_field("temperature_maximum"); ?> °C</p>
                 </div>
 
+                <div class="single__categories">
+                        <?php
+                        $categories = get_the_category();
+                        if ($categories) {
+                                foreach ($categories as $categorie) {
+                                        echo '<a href="' . esc_url(get_category_link($categorie->term_id)) . '">' . esc_html($categorie->name) . '</a> ';
+                                }
+                        }
+                        ?>
+                </div>
+
                 <div class="single__informations">
                         <p class="single__auteur">Auteur: <?php echo $single_auteur; ?></p>
                         <p class="single__publication"> <?php echo $date_publication; ?></p>
                         <!-- Liste des catégories de cette page -->
-                        
-                        <p class="single__categories">Catégories:
-                                <?php
-                                $categories = get_the_category();
-                                if ($categories) {
-                                        foreach ($categories as $categorie) {
-                                                echo '<a href="' . esc_url(get_category_link($categorie->term_id)) . '">' . esc_html($categorie->name) . '</a> ';
-                                        }
-                                }
-                                ?>
-                        </p>
                 </div>
 
         </div>

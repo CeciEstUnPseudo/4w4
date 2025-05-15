@@ -783,7 +783,7 @@ footer {
     justify-content:center;
     align-items:top;
     width:70%;
-    height:80vh;
+    height:70%;
     margin:2% auto;
     font-size:x-small;
 
@@ -792,14 +792,10 @@ footer {
   }
 
   .single__contenu--image{
-    width:40%;
+    width: 40%;
     margin: 2% auto 0% auto;
-    height:30%;
-
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
+    height:70vh;
+    background-color:red;
   }
 
   .single__contenu--soustitre{
@@ -858,6 +854,25 @@ footer {
     margin-top:10%;
     justify-self:flex-end;
     font-size:7px;
+  }
+
+  .single__categories{
+    margin-top:2%;
+  }
+
+  .single__categories > *{
+    background-color:grey;
+    border-radius:10px;
+    width:fit-content;
+    padding:1%;
+    color:white;
+    text-decoration:none;
+  }
+
+  .single__categories > *:hover{
+    background-color:rgb(224, 224, 224);
+    color:black;
+    text-decoration:underline;
   }
 
 
