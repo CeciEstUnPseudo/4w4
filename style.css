@@ -386,8 +386,16 @@ body {
 .hero__icones-box {
   margin-top:2%;
   width: 10%;
+  display:flex;
+  flex-direction:row;
+  justify-content:space-around;
+  align-items:center;
 
   transition: opacity 0.5s ease-in-out;
+}
+
+.hero__icones-box > *{
+  margin:0% 2px 0% 2px;
 }
 
 .hero__icones-box-variante{

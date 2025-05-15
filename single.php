@@ -8,7 +8,7 @@
 
 <?php get_header() ?>
         <section class="single__contenu">
-        <div class="single__contenu--image"><?php   the_post_thumbnail('large'); ?></div>
+        <div class="single__contenu--image"><?php the_post_thumbnail('large'); ?></div>
         <div class="single__contenu__texte">
                 <h2 class="single__contenu__texte--titre">
                 <?php the_title(); ?>
