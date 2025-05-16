@@ -1,26 +1,22 @@
 @charset "UTF-8";
 /*
-Theme Name: 4W4 - Eddy Martin
+Theme Name: 4W4 - Émile Litalien
 Theme URI: https://referenced.ca
-Author: Eddy Martin
-Author URI: https://github.com/eddytuto
+Author: Émile Litalien
+Author URI: https://github.com/CeciEstUnPseudo
 Description: Thème de base développer dans le cadre du cours 4W4
 Version: 1.0
 Tested up to: 6.2
 Requires PHP: 7.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: 4w4-eddy
+Text Domain: 4w4-emile
 */
-/* /////////////////////
-Les Variables
-//////////////////////// */
-/* /////////////////////////
-Les bases
-/////////////////////////// */
-/* /////////////////////////
-Les composants
-/////////////////////////// */
+
+body{
+  overflow-x:hidden;
+  font-size: clamp(0.5em, 1.5vw, 1em);
+}
 .menu {
   display: flex;
   justify-content: right;
@@ -30,16 +26,34 @@ Les composants
   width: 90%;
   list-style-type: none;
 }
+
 @media screen and (max-width: 820px) {
-  .menu {
-    width: fit-content;
-    align-items: center;
-    justify-content: center;
+  .entete__menu .menu {
+
+    display: none;
+
+    flex-direction: column;
+    align-items:end;
+    height: 45vh;
+    width: 17vw;
+    position: absolute;
+    top: 75%;
+    right: 0;
+    font-size:20px;
+    text-align:right;
+
     padding: 0;
     background-color: white;
-    top: 12%;
-    position: absolute;
-    width: 100%;
+  }
+
+  .entete__menu .menu .menu-item {
+    margin: 1% 2% 2% 0%;
+  }
+
+  .entete__menu .menu .menu-item:hover {
+    background-color: rgb(224, 224, 224);
+    border-radius:10px;
+    margin-right:3%;
   }
 }
 .menu__ul {
@@ -47,18 +61,22 @@ Les composants
   flex-wrap: wrap;
   flex-direction: row;
 }
-@media screen and (max-width: 820px) {
-  .menu__ul {
-    flex-direction: column;
-    text-align: center;
-    width: fit-content;
-    margin-left: -5%;
-    gap: 2px;
-  }
-}
+
 .menu-item a {
   color: rgb(58, 58, 58);
   text-decoration: none;
+  font-size: 0.7em;
+  padding: 5px;
+  text-wrap: nowrap;
+}
+.menu-item a:hover {
+  color: rgb(0, 0, 0);
+}
+.menu-item a:visited {
+  color: rgba(0, 0, 0, 0.473);
+}
+.menu-item a:focus {
+  color: rgba(0, 0, 0, 0.151);
   font-size: 0.7em;
   padding: 5px;
   text-wrap: nowrap;
@@ -77,44 +95,116 @@ Les composants
 Le composant .carte
 ********************** */
 .carte {
-  height: 150px;
   border: 1px solid #ddd;
   padding: 20px;
   border-radius: 8 px;
   flex: 1 1 250px;
 }
+
+.carte__img {
+  width: 100%;
+  height: 100%;
+}
+
+.wp-post-image{
+  width:40%;
+  height:40%;
+  margin:auto;
+}
+
+.size-large {
+  width: 100%;
+  height: 100%;
+}
+
 @media screen and (max-width: 820px) {
   .carte {
     width: 49.5%;
   }
+
+  .wp-post-image {
+    width: 20%;
+    height: 50%;
+    margin:auto;
+  }
 }
-.carte__img {
-  width: 100%;
-  height: 100%;
+
+.carte__contenu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: top;
+}
+.carte__contenu--texte {
+  height:180px;
+  padding-left: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: left;
+}
+
+.carte__categories {
+  display: flex;
+  flex-direction:row;
+  flex-wrap: no-wrap;
+  justify-content: left;
+
+  justify-self:flex-end;
+
+  list-style:none;
+  
+  & li {
+    margin-right: 1em;
+    padding: 0.2em 2em;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+
+    &:hover   {
+      background-color: #e1e1e1;
+    }
+
+    & a {
+      text-decoration: none;
+      color: #000;
+    }
+  }
 }
 
 .recherche {
   display: flex;
   flex-direction: row;
   align-items: center;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-}
+  }
 @media screen and (max-width: 820px) {
-  .recherche {
+  .entete .recherche {
     display: none;
   }
 }
-.recherche-form {
-  width: 80%;
-}
-.recherche-input {
-  opacity: 50%;
-  outline: none;
-}
-.recherche-input:hover {
+.recherche__input {
   opacity: 100%;
+  outline: none;
+
+}
+.recherche__input:hover {
+  opacity: 90%;
+}
+.recherche__bouton {
+  border: 1.5px solid rgb(0, 0, 0);
+  border-right:none;
+  color: black;
+  font-weight: bold;
+  width:20px;
+  height:19px;
+}
+.recherche__icon {
+  color: black;
+  font-weight: bold;
 }
 .formulaire {
+  position:relative;
+  z-index:3;
   background-color: white;
   box-shadow: 2px 2px 5px #d6d6d6, -2px 2px 3px #d6d6d6;
   width: 60%;
@@ -152,17 +242,17 @@ Le composant .carte
 
 .populaire {
   width: 100%;
-  height: 60vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  margin-bottom: 2%;
 }
 .populaire__contenant {
   background-color: rgb(235, 235, 235);
   width: 95%;
-  height: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -171,14 +261,16 @@ Le composant .carte
   font-family: "Montserrat";
 }
 .populaire__article {
-  width: 18%;
-  height: 40%;
+  width: 30%;
+  min-height:200px;
+  max-height:200px;
   background-color: red;
   margin: 0.25%;
   padding: 0.5%;
   border: 2px solid black;
   background-color: white;
   overflow: hidden;
+  font-size: 10px;
 }
 @media screen and (max-width: 820px) {
   .populaire__article {
@@ -188,55 +280,131 @@ Le composant .carte
 .populaire__article:hover {
   background-color: rgb(240, 240, 240);
 }
+
+.wp-block-image {
+  width: 10px;
+  height: 150px;
+}
+
 /* /////////////////////////
 Les layouts
 /////////////////////////// */
+body {
+  overflow-x: hidden;
+}
+
 .hero {
   font-family: "Montserrat";
   min-height: 80vh;
   background-color: rgb(154, 101, 101);
   background-image: url("images/maldives.jpg");
-  background-size: cover;
+  position:relative;
 }
+
+
+  .hero__carrousel{
+    position:absolute;
+    background-repeat:no-repeat;
+    min-height: 100vh;
+    min-width:100%;
+    background-size: cover;
+    opacity: 100%;
+
+    transition: opacity 1.5s ease-in-out;
+  }
+
+  .carrouselInvisible{
+    opacity:0;
+
+    transition: opacity 1.5s ease-in-out;
+  }
+
+  .hero__carrousel-boutonsRadio{
+    position:relative;
+    z-index:3;
+    height:fit-content;
+    width:fit-content;
+    margin:auto auto 3% auto;
+    align-self:end;
+
+    
+    display:flex;
+    flex-direction:row;
+    justify-items:space-around;
+    align-items:center;
+  }
+
+
+
 @media screen and (max-width: 820px) {
   .hero {
     margin-top: 5%;
   }
 }
 .hero__contenu {
-  height: 50vh;
-  width: 100%;
+  position:relative;
+  z-index:3;
+  height: 100vh;
+  width: 90%;
   padding-top: 3%;
-  margin-left: 5%;
+  margin:0% 5% 0% 5%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   font-weight: bold;
+
+  transition: opacity 0.5s ease-in-out;
 }
+
+.hero__contenu-variante{
+
+  /* Les éléments se déplacent tous vers la droite */
+  text-align: right;
+  align-items: right;
+  justify-content: right;
+}
+
+.invisible{
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Animation pour hero__contenu (ne se lance qu'une fois) */
+
+
 .hero__titre {
   font-size: 3em;
   color: black;
   text-shadow: 2px 2px 4px #389757;
 }
+
 .hero__description {
-  width: 48%;
+  width: 100%;
   padding: 10% auto;
 }
-.hero__bouton {
-  margin-bottom: 1%;
-  font-size: 0.7em;
-  height: 5vh;
-  font-weight: bold;
-  width: fit-content;
-  border-radius: 5px;
-  border: 0px solid black;
-  background-color: rgb(159, 228, 228);
-}
+
 .hero__icones-box {
-  width: 5%;
+  margin-top:2%;
+  width: 10%;
+  display:flex;
+  flex-direction:row;
+  justify-content:space-around;
+  align-items:center;
+
+  transition: opacity 0.5s ease-in-out;
 }
+
+.hero__icones-box > *{
+  margin:0% 2px 0% 2px;
+}
+
+.hero__icones-box-variante{
+  margin-left:90%;
+}
+
 .hero__icones {
-  width: 30%;
+  flex-grow:1;
+
 }
 
 .galerie {
@@ -263,29 +431,6 @@ Les layouts
   font-family: "Montserrat";
 }
 
-.burger {
-  display: none;
-}
-@media screen and (max-width: 820px) {
-  .burger {
-    display: block;
-    position: absolute;
-    top: 20%;
-    right: 5%;
-    width: 50px;
-    height: 50px;
-    z-index: 1000;
-  }
-}
-
-.checkbox__burger {
-  display: none;
-}
-
-.checkbox__burger:checked ~ .entete__nav {
-  display: flex;
-}
-
 .entete {
   margin: 0 auto;
   display: flex;
@@ -293,6 +438,7 @@ Les layouts
   align-items: center;
   height: 10vh;
 }
+
 @media screen and (max-width: 820px) {
   .entete {
     flex-direction: column;
@@ -307,14 +453,20 @@ Les layouts
 }
 .entete__logo-box {
   height: 100%;
+  width:5%;
   margin-left: 0;
+}
+.custom-logo{
+  width: 100%;
+  height: 100%;
 }
 @media screen and (max-width: 820px) {
   .entete__logo-box {
     position: absolute;
     left: 10%;
-    top: -30%;
+    /* top: 30%; */
     height: 100%;
+    width:10%;
   }
 }
 .entete__logo-img {
@@ -331,6 +483,7 @@ Les layouts
 @media screen and (max-width: 820px) {
   .entete__nav {
     display: none;
+
     flex-direction: column;
     align-items: center;
     height: 60vh;
@@ -340,6 +493,37 @@ Les layouts
     right: 0;
   }
 }
+
+.burger {
+  display: none;
+}
+
+@media screen and (max-width: 820px) {
+  .burger {
+    display: block;
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    width: 50px;
+    height: 50px;
+    z-index: 1000;
+  }
+
+  .burger__img{
+    width:100%;
+    height:100%;
+  }
+
+}
+
+.checkbox__burger{
+  display:none;
+}
+
+.checkbox__burger:checked ~ .entete__nav .entete__menu .menu {
+  display:flex;
+}
+
 .entete__menu {
   margin-left: 55%;
 }
@@ -402,4 +586,630 @@ Les layouts
   height: 20px;
   position: absolute;
   right: 1%;
+}
+
+/*
+  --------------------------------- Layout du pied de page
+*/
+footer {
+}
+
+.piedpage__vague{
+  margin-bottom: -0.5%;
+}
+.piedpage {
+  display: flex;
+  flex-direction: column;
+
+  color: #000;
+  /* A top shadow */
+
+  font-family: "Montserrat";
+}
+.piedpage__s1 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+.piedpage__s1__externe {
+  flex: 0 0 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.piedpage__s1__externe__titre{
+  color: black;
+  text-align: center;
+  text-decoration:underline;
+  font-weight:bold;
+  width:100%;
+}
+.piedpage__s1__externe .menu {
+  
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
+}
+
+.liste2{
+  margin-top:0.5%;
+  width:30%;
+}
+
+.liste2 .menu-principal-container{
+  margin-top:2%;
+  height:50%;
+}
+.liste2 .menu {
+  height:100%;  
+  display: flex;
+  flex-direction: column;
+  flex-wrap:wrap;
+}
+
+
+.piedpage__s1__externe .menu a {
+  
+  color: black;
+  text-decoration: none;
+  font-size: 0.7em;
+  padding: 5px;
+  text-wrap: nowrap;
+
+  border-radius:5px;
+}
+
+.piedpage__s1__externe .menu a:hover {
+  
+  background-color: rgb(165, 165, 165);
+  text-decoration:underline;
+}
+
+.menu-externe-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2%;
+}
+
+.piedpage__s1__adresse {
+  flex: 1 0 40%;
+  font-size:small;
+
+  margin-top:1%;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+}
+
+.piedpage__s1__adresse__recherche {
+  margin:1% auto;
+}
+
+.footer__icones-box {
+  margin-top:2%;
+  width: 10%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width:25%;
+}
+
+.piedpage__s1__description__titre {
+  color: black;
+  text-align: center;
+  margin-top:2%;
+  text-decoration:underline;
+  font-size:medium;
+  font-weight:bold;
+}
+.piedpage__s1__description {
+  flex: 0 0 20%;
+  width:30%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  margin-right:1%;
+
+  font-size:smaller;
 }/*# sourceMappingURL=style.css.map */
+.piedpage__s1__description__texte{
+  margin:1% 0% 1% 0%;
+  text-decoration:underline;
+}
+.piedpage__s1__description__image{
+  width:100%;
+}
+
+@media screen and (max-width: 820px) {
+  .piedpage__s1__adresse{
+    width:30%;
+    flex: 1 0 30%;
+  }
+}
+
+.search__titre {
+    font-size: 1.5em;
+    font-family: "Montserrat";
+    color: black;
+    text-align: center;
+    margin-top: 2%;
+  }
+
+  .search_qteResultats{
+    font-size: 1em;
+    font-family: "Montserrat";
+    color: black;
+    text-align: center;
+    margin:2% auto;
+  }
+
+  .post-categories{
+    list-style-type: none;
+  }
+
+  .search__populaire {
+    height:72vh;
+  }
+
+  .search__contenant {
+    max-height:100%;
+  }
+
+  .category__titre {
+    
+    font-size: 1.5em;
+    font-family: "Montserrat";
+    color: black;
+    text-align: center;
+    margin:2% auto;
+    width:fit-content;
+  }
+
+  .category__description {
+    font-size: 1em;
+    font-family: "Montserrat";
+    color: black;
+    text-align: center;
+    margin:2% auto;
+    width:80%;
+  }
+
+
+  .single__contenu{
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:top;
+    width:70%;
+    height:70%;
+    margin:2% auto;
+    font-size:x-small;
+
+    border-radius:20px;
+    border: 1px solid black;
+  }
+
+  .single__contenu--image{
+    width: 40%;
+    margin: 2% auto 0% auto;
+    height:70vh;
+    background-color:red;
+  }
+
+  .single__contenu--soustitre{
+    text-decoration:underline;
+    margin-top:3%;
+    margin-bottom:1%;
+  }
+
+  .single__contenu__texte{
+    display:flex;
+    flex-direction:column;
+    justify-content:left;
+    align-items:left;
+    width:50%;
+    margin-left:0.5%;
+    margin-bottom:2%;
+    padding:2% 1% 3% 1%;
+  }
+
+  .single__contenu__texte--titre{
+    font-size:xx-large;
+    text-decoration:underline;
+  }
+
+  .single__contenu__texte--texte{
+    width:60%;
+    margin-left:2%;
+    padding-left:5%;
+    border-left:1px solid black;
+  }
+
+  .single__contenu__texte--texte .wp-block-gallery{
+    height:50%;
+    margin:2% 0% 5% auto;
+  }
+
+  .single__contenu__texte--texte .wp-block-image{
+    border: 2px solid rgb(84, 84, 84);
+    height:90%;
+    opacity:90%
+  }
+
+  .single__contenu .wp-block-image:hover{
+    opacity:100%;
+    border: 2px solid black;
+    height:100%;
+  }
+
+  .single__contenu__infoSup{
+    margin-left:2%;
+    padding-left:5%;
+    border-left:1px solid black;
+  }
+
+  .single__informations{
+    margin-top:10%;
+    justify-self:flex-end;
+    font-size:7px;
+  }
+
+  .single__categories{
+    margin-top:2%;
+  }
+
+  .single__categories > *{
+    background-color:grey;
+    border-radius:10px;
+    width:fit-content;
+    padding:1%;
+    color:white;
+    text-decoration:none;
+  }
+
+  .single__categories > *:hover{
+    background-color:rgb(224, 224, 224);
+    color:black;
+    text-decoration:underline;
+  }
+
+
+/* Erreur (404) */
+
+.erreur{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  margin:auto;
+  text-align:center;
+  font-family: "Montserrat";
+  height:100vh;
+
+  background-size: cover;
+  background-position: center;
+}
+
+.erreur__404{
+  width:60%;
+  font-size:clamp(2em, 10vw, 4em);
+  font-weight:bold;
+  padding:0.5%;
+
+  background-color:rgba(255, 255, 255, 0.158);
+}
+
+.erreur__description{
+  width:60%;
+  margin-top:2.5%;
+  padding:0.5%;
+
+  font-weight:bold;
+  font-size:clamp(0.4em, 1.5vw, 0.9em);
+  background-color:rgba(255, 255, 255, 0.158);
+}
+
+.erreur__nav__titre{
+  margin-top:0.5%;
+  font-weight:bold;
+}
+
+.erreur__nav{
+  margin:0.2% auto;
+  width:60%;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+.erreur__nav__accueil{
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items:center;
+  text-decoration:none;
+  color:rgb(71, 154, 209);
+  width:15%;
+  height:7vh;
+  border-radius:5px;
+  text-align:center;
+  font-weight:bold;
+  text-wrap:nowrap;
+  font-size:clamp(1em, 1.5vw, 2em);
+  padding:0.8% 1% 1% 1%;
+  margin-top:1%;
+}
+
+.erreur__menu{
+  width:100%;
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items:center;
+
+  margin-top:3%;
+}
+
+.erreur__menu > .menu{
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items:center;
+  font-size:clamp(0.7em, 1.5vw, 1.2em);
+  text-align:center;
+}
+
+.erreur__menu > .menu > *{
+  width: fit-content;
+  font-size:clamp(0.5em, 1.5vw, 1em);
+  margin:0% 0.5% 0% 0.5%;
+  padding:0.5% 1% 1% 1%;
+  border-radius:5px;
+  color:black;
+  text-decoration:none;
+
+  text-align:center;
+}
+
+.erreur__menu > .menu > *:hover{
+  background-color:rgb(224, 224, 224);
+  text-decoration:underline;
+}
+
+.erreur__recherche{
+  margin-top:2%;
+  width:30%;
+  height:5vh;
+
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items:center;
+  padding:0.5%;
+  background-color:rgba(255, 255, 255, 0.158);
+}
+
+.erreur__recherche--input{
+  width:100%;
+  height:100%;
+  font-size:clamp(1em, 1.5vw, 2em);
+  text-align:start;
+  padding-left:1em;
+  border:none;
+  outline:none;
+  background-color:rgba(255, 255, 255, 0);
+}
+
+/* Version tablette */
+
+@media screen and (max-width: 1024px) {
+  .erreur{
+    height:150vh;
+  }
+
+  .erreur__404{
+    width:50%;
+    height:fit-content;
+  }
+
+  .erreur__description{
+    width:50%;
+    height:fit-content;
+    text-align:center;
+    font-size:clamp(1.5em, 1.5vw, 2em);
+  }
+
+  .erreur__nav__accueil{
+    width:35%;
+    height:9vh;
+    text-align:center;
+    font-size:clamp(2em, 1.5vw, 3em);
+    padding:0.8% 1% 1% 1%;
+  }
+
+  .erreur__menu > .menu{
+    width:60%;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+  }
+
+  .erreur__menu > .menu > *{
+    width: fit-content;
+    height:fit-content;
+    font-size:clamp(2.5em, 1.5vw, 3em);
+    margin:1%;
+  }
+
+  .erreur__recherche{
+    width:40%;
+    height:5vh;
+  }
+
+  .erreur__recherche--input{
+    font-size:clamp(1.5em, 1.5vw, 2em);
+  }
+}
+
+/* Version mobile */
+@media screen and (max-width:520px){
+  .erreur__404{
+    width:80%;
+    height:fit-content;
+    font-size:clamp(6em, 1.5vw, 7em);
+  }
+
+  .erreur__description{
+    width:80%;
+    height:fit-content;
+    text-align:center;
+    font-size:clamp(2em, 1.5vw, 2em);
+  }
+
+  .erreur__nav__accueil{
+    width:85%;
+    height:5vh;
+    text-align:center;
+    font-size:clamp(4em, 1.5vw, 5em);
+    padding:0.8% 1% 1% 1%;
+  }
+
+  .erreur__menu > .menu{
+    width:80%;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+  }
+
+  .erreur__menu > .menu > *{
+    font-size:clamp(4em, 1.5vw, 5em);
+    margin:1%;
+  }
+
+  .erreur__recherche{
+    width:40%;
+    height:5vh;
+  }
+
+  .erreur__recherche--input{
+    font-size:clamp(1.5em, 1.5vw, 2em);
+  }
+}
+
+
+/* Les listes d'articles selon la catégorie */
+/* Boutons */
+.articles__boutons{
+  width:40%;
+  display:flex;
+  flex-direction:row;
+  justify-content:space-around;
+  align-items:center;
+  margin:2% auto;
+}
+
+.articles__bouton{
+  
+  width:fit-content;
+  height:5vh;
+  padding:0.5% 1% 1% 1%;
+  border-radius:5px;
+  text-align:center;
+  font-size:clamp(0.5em, 1.5vw, 1em);
+  color:black;
+  text-decoration:none;
+  background-color:white;
+}
+
+.articles__bouton:hover{
+  background-color:rgb(224, 224, 224);
+  text-decoration:underline;
+}
+
+.bouton-actif{
+  background-color:rgb(159, 228, 228);
+  color:black;
+}
+
+.destination{
+  margin-bottom:3%;
+
+  font-family:"Montserrat";
+}
+
+.destination__titre{
+  width:fit-content;
+  margin:auto;
+}
+
+.destination__list{
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  justify-content:space-around;
+  align-items:center;
+}
+
+.article__cacher{
+  margin:1%;
+  border:1px solid black;
+
+  width:30%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+.article__cacher__titre{
+  width:fit-content;
+  font-size:Clamp(0.5em, 1.5vw, 1em);
+}
+
+.article__cacher__titre:hover{
+  background-color: rgb(240, 240, 240);
+  cursor:pointer;
+}
+
+.article__cacher__info{
+  height:0;
+  opacity:0;
+  font-size:0;
+  padding:1%;
+
+  transition: all 0.5s ease-in-out;
+}
+
+.visible{
+  height:100%;
+  opacity:100%;
+  font-size:Clamp(0.25em, 1.5vw, 0.80em);
+
+  /* Les changements de cette classe sont pas animation */
+  transition: all 0.5s ease-in-out;
+}
+
+.article__cacher__info-plus{
+  font-size:Clamp(0.15em, 1.5vw, 0.75em);
+}
+
+.article__cacher__info-plus:hover{
+  background-color: rgb(240, 240, 240);
+  cursor:pointer;
+}

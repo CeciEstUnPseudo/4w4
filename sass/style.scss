@@ -11,11 +11,23 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: 4w4-eddy
 */
+/* /////////////////////
+Les Gabarits
+//////////////////////// */
+@import "../gabarit/carte.php";
+
 
 /* /////////////////////
 Les Variables
 //////////////////////// */
 @import "variables/couleurs";
+@import "variables/dimensions";
+
+/* /////////////////////////
+Les bases
+/////////////////////////// */
+@import "base/lien";
+@import "base/simple";
 @import "variables/dimensions";
 
 /* /////////////////////////
@@ -32,6 +44,9 @@ Les composants
 @import "composants/recherche";
 @import "composants/formulaire";
 @import "composants/populaire";
+@import "composants/gallerie";
+@import "composants/checkbox";
+
 
 /* /////////////////////////
 Les layouts
@@ -40,3 +55,6 @@ Les layouts
 @import "layout/entete";
 @import "layout/header";
 @import "layout/footer";
+@import "layout/search";
+@import "layout/404";
+@import "layout/hero";

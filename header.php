@@ -17,15 +17,20 @@
         <header>
             <div class="entete global">
                 <figure class="entete__logo-box">
-                    <img class="entete__logo-img" src="https://gftnth00.mywhc.ca/4w4_28/wp-content/uploads/2025/02/logo.png" alt="">
+                        <?php 
+                            if (function_exists('the_custom_logo')) {
+                                the_custom_logo();
+                            } 
+                        ?>
                 </figure>
 
                 
 
                 <label for="checkbox__burger" class="burger">
-                    <img class="burger__img" src="https://s2.svgbox.net/hero-outline.svg?ic=menu&color=000" width="32" height="32">
+                    <img class="burger__img" src="https://s2.svgbox.net/hero-outline.svg?ic=menu&color=000">
                 </label>
                 <input type="checkbox" id="checkbox__burger" class="checkbox__burger">
+                
 
                 <div class="entete__nav">
 
@@ -35,15 +40,7 @@
                             'container_class'      => 'entete__menu',
                 )); ?>
 
-
-                <form class="recherche" role="search" method="get"  action="<?php echo esc_url( home_url( '/' ) ); ?>">
-                <label>
-                    <input class="recherche__input" type="search" class="search-field" placeholder="Search..." value="<?php echo get_search_query(); ?>" name="s" />
-                </label>
-                <button class="recherche__bouton" type="submit" class="search-submit">
-                <img class="recherche-icon" src="https://s2.svgbox.net/hero-outline.svg?ic=search&color=000" width="14" height="13">
-                </button>
-                </form>
+                    <?php get_search_form(); ?>
 
                 </div>
             </div>

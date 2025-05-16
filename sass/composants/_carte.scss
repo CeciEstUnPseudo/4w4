@@ -11,18 +11,44 @@ Le composant .carte
   // height:20%;
   // margin:0.25% 0.25% 0.25% 0.25%;
   // background-color:yellow;
-
-  height:150px;
   border: 1px solid #ddd;
   padding: 20px;
   border-radius:8 px;
   flex: 1 1 250px;
+  
 
 
   &__img{
     width:100%;
     height:100%;
   }
+
+  &__contenu{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    justify-content:space-around;
+    align-items:top;
+
+    &--texte{
+      padding-left:2%;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-around;
+      align-items:left;
+    }
+
   
+  }
+  
+}
+
+.post-categories {
+  display: flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
   

@@ -1,12 +1,13 @@
-<?php 
+<?php
 // Modèle index.php est le modèle par défaut
 // Si aucun modèle peut satisfaire la requête http, ce modèle s'affichera
 ?>
 
 
 <?php get_header() ?>
+<h1>index.php</h1>
 
-        <section class="hero">
+<!-- <section class="hero">
             <div class="hero__contenu">
                 <h1 class="hero__titre">Voyager autrement avec Mondo Voyages!</h1>
                 <p class="hero__description">
@@ -24,9 +25,9 @@
                     <img class= "hero__icones" src="https://s2.svgbox.net/social.svg?ic=instagram&color=000" width="32" height="32">
                 </div>
             </div>
-        </section>
+        </section> -->
 
-        <section class="formulaire">
+<!-- <section class="formulaire">
                 <div class="formulaire__section">
                     <p class = "formulaire__section--titre">
                         Nom
@@ -61,12 +62,11 @@
                 </div>
 
                 <button class="formulaire__bouton">S'INSCRIRE</button>
-        </section>
+        </section> -->
 
-        <section class="galerie">
+<!-- <section class="galerie">
             <h2 class="galerie__titre">Nos destinations favorites</h2>
 
-            <section class="galerie__cartes">
                 <div class="carte">
                         <img src="\4w4\wp-content\themes\TP1\images/img1.jpg" alt="Destination1" class="carte__img">
                 </div>
@@ -97,24 +97,40 @@
                 <div class="carte">
                         <img src="\4w4\wp-content\themes\TP1\images/img10.jpg" alt="Destination10" class="carte__img">
                 </div>
-            </section>
-            
+        </section> -->
 
-        </section>
+<section class="populaire">
+    <div class="populaire__contenant">
+        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                <article class="populaire__article">
 
-        <section class="populaire">
-            <div class="populaire__contenant">
-                <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                    <article class="populaire__article">
+                    <div class="carte__contenu">
+                        <?php
+                        if (has_post_thumbnail()) {
+                            // Afficher la petite image associée à l'article (image mise en avant)
+                            the_post_thumbnail('thumbnail');
+                        }
+                        ?>
+                        <div class="carte__contenu--texte">
+                            <h2 class="carte__titre">
+                                <?php the_title(); ?>
+                            </h2>
+                            <p class="carte__description">
+                                <?php echo wp_trim_words(get_the_excerpt(), 80, "..."); ?>
+                            </p>
 
-                        <h2 class="populaire__titre"><?php the_title(); ?></h2>
-                        <div class="populaire__contenu"><?php echo wp_trim_words(get_the_content(), 20, "..."); ?></div>
-                    </article>
-                <?php endwhile; endif; ?>
-            </div>
-        </section>
 
-        <?php get_footer() ?>
+                        </div>
+                    </div>
+
+                </article>
+        <?php endwhile;
+        endif; ?>
+    </div>
+</section>
+
+<?php get_footer() ?>
 
 </body>
+
 </html>

@@ -1,13 +1,10 @@
-Devis – TP1 : Création d’un site WordPress pour un club de voyage
+Émile Litalien
 
-Objectifs du TP1
+TP2: Club de voyage | 4w4-Conception d'interface et développement Web
+Hiver 2025 TIM 
 
-L’objectif de ce travail est de concevoir et de déployer un site WordPress pour un club de voyage. Ce club propose à ses membres des voyages vers des destinations originales à travers le monde.
+Description: 
+TP2 sur le club de voyage fait au cours de la session pour le cours de 4w4 pour Eddy Martin
 
-Les exigences sont les suivantes :
 
-· Chaque destination doit être catégorisée afin que les membres puissent rechercher des voyages correspondant à leurs préférences.
-
-· Le design général doit mettre en valeur les offres de voyage réservées aux membres.
-
-· Le projet doit être déployé sur le serveur Web Hosting Canada (WHC).
+Lien WHC: https://gftnth00.mywhc.ca/4w4_28/
