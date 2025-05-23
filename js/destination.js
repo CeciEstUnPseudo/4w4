@@ -33,15 +33,15 @@ boutons.forEach(function (bouton) {
       const categoryId = bouton.getAttribute('data-category-id'); // Récupérer l'ID de la catégorie à partir de l'attribut data-category-id du bouton
       const domaine = window.location.href;
 
-      const apiUrl = `${domaine}wp-json/wp/v2/posts?search=${paysSelectionne}`; // On cherche le pays dans tous les articles
+      console.log("Voici le pays selectionné: " + paysSelectionne);
+      console.log("Voici le categoryId: " + categoryId);
 
-      if (paysSelectionne !== null && paysSelectionne !== "") { // Si le bouton a un pays
-        const apiUrl = `${domaine}wp-json/wp/v2/posts?search=${paysSelectionne}`; // On cherche le pays dans tous les articles
-      } else {
+      if (paysSelectionne == null) { // Si le pays n'est pas vide, on cherche par catégorie
+
+        // Mode de recherche selon la catégorie
         const apiUrl = `${domaine}wp-json/wp/v2/posts?categories=${categoryId}`;
-      }
 
-      console.log("APIURL = " + apiUrl);
+        console.log("APIURL Categorie = " + apiUrl);
       fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
@@ -83,6 +83,55 @@ boutons.forEach(function (bouton) {
 
         })
         .catch(error => console.error('Erreur lors de la récupération des articles:', error));
+      } else {
+
+        // Mode de recherche selon le pays
+        const apiUrl = `${domaine}wp-json/wp/v2/posts?search=${paysSelectionne}`;
+
+        console.log("APIURL Pays = " + apiUrl);
+      fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+          const destinationList = document.querySelector('.destination__list');
+          const paysTitre = document.querySelector(".tempPays__paysSelect");
+          // Enlever les anciens articles de la liste
+          destinationList.innerHTML = ""; // On vide la liste avant d'ajouter les nouveaux articles
+          paysTitre.innerHTML = paysSelectionne; // On vide la liste avant d'ajouter les nouveaux articles
+          //
+          data.forEach(article => {
+            const articleElement = document.createElement('div'); // Créer un nouvel élément div pour chaque article et lui mettre (innerHTML) les 3 éléments
+            articleElement.classList.add('article__cacher'); // Ajouter la classe article__cacher pour le style
+            articleElement.innerHTML = ` 
+                      <h3 class="article__cacher__titre">${article.title.rendered}</h3>
+                      <div class="article__cacher__info">${article.excerpt.rendered}</div>
+                      <a href="${article.link}" class="article__cacher__info-plus">Lire plus</a>
+                  `;
+            destinationList.appendChild(articleElement);
+
+            // articleElement.addEventListener('click', function () { // L'event Listener pour montré le contenu de l'article (comme un accordéon) quand on clique sur le titre
+            //   articleElement.querySelector('.article__cacher__info').classList.toggle('visible'); // Toggle la classe visible pour montrer ou cacher le contenu
+            // });
+
+            // On selectionne le h3 de articleElement
+
+          
+
+
+            const articlesTitres = articleElement.querySelectorAll('.article__cacher__titre'); // On prend le titre de l'article
+            articlesTitres.forEach(function (titre) { // On met un event listener pour chaque titre
+              titre.addEventListener("click", function(){
+                const info = titre.nextElementSibling; // On prend l'élément suivant le titre car on ne veut pas toggle tous les titres / tous les articles + on n'utilise pas le parent pour le addEventListener
+                console.log("Click");
+                info.classList.toggle("visible"); // On toggle la classe visible pour montrer/cacher le resumé (contenu)
+              })
+            })
+            
+          });
+
+        })
+        .catch(error => console.error('Erreur lors de la récupération des articles:', error));
+      }
+      
     // });
 
   })
