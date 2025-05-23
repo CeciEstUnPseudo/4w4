@@ -28,7 +28,7 @@
         }
     </style>
 
-    <?php creer_vague("<?php echo $footer_couleur ?>") ?>
+    <?php creer_vague($footer_couleur, "piedpage__vague") ?>
 
     <div class="piedpage global">
         <section class="piedpage__s1">

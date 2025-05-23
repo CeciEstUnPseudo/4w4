@@ -63,9 +63,13 @@ function afficherDestinations($pays){
   }
 }
 
-function creer_vague($couleur){
+function creer_vague($couleur, $class){
+
+  // Mettre dans la console
+  echo '<script>console.log("Couleur: ' . $couleur . '")</script>';
+
   // Créer une vague avec la couleur spécifiée
-  echo '<svg class="vague" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="' . $couleur . '" fill-opacity="1" d="M0,128L60,160C120,192,240,256,360,245.3C480,235,600,149,720,128C840,107,960,149,1080,170.7C1200,192,1320,192,1380,192L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>';
+  echo '<svg class="' . $class . '" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="' . $couleur . '" fill-opacity="1" d="M0,128L60,160C120,192,240,256,360,245.3C480,235,600,149,720,128C840,107,960,149,1080,170.7C1200,192,1320,192,1380,192L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>';
 }
 
 ?>

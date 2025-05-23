@@ -35,7 +35,7 @@ Template Name: Template Pays
 
 <section class="tempPays__restAPI">
   <div class="tempPays__restAPI__vagueTop">
-    <?php creer_vague("#93c47d") ?>
+    <?php creer_vague("#93c47d", "tempPays__vague") ?>
 
   </div>
   <div class="tempPays__restAPI__contenu">
