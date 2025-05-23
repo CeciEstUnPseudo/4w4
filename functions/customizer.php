@@ -352,7 +352,66 @@ $wp_customize->add_setting('icone_image1', array(
     'label' => __('Image en background', 'theme_31w'),
     'section' => '404_section',
   )));
+
+
+  // Section template-pays
+$wp_customize->add_section("ExamFinal_section", array(
+  "title" => __("Final Section", "theme_31w"),
+  "priority" => 30,
+));
+
+$wp_customize->add_setting('img_galerie_1', array(
+  'default' => '',
+  'sanitize_callback' => 'esc_url_raw',
+));
+
+$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'img_galerie_1', array(
+  'label' => __('Image_Galerie_1', 'theme_31w'),
+  'section' => 'ExamFinal_section',
+)));
+
+$wp_customize->add_setting('img_galerie_2', array(
+  'default' => '',
+  'sanitize_callback' => 'esc_url_raw',
+));
+
+$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'img_galerie_2', array(
+  'label' => __('Image_Galerie_2', 'theme_31w'),
+  'section' => 'ExamFinal_section',
+)));
+
+$wp_customize->add_setting('img_galerie_3', array(
+  'default' => '',
+  'sanitize_callback' => 'esc_url_raw',
+));
+
+$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'img_galerie_3', array(
+  'label' => __('Image_Galerie_3', 'theme_31w'),
+  'section' => 'ExamFinal_section',
+)));
+
+$wp_customize->add_setting('img_galerie_4', array(
+  'default' => '',
+  'sanitize_callback' => 'esc_url_raw',
+));
+
+$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'img_galerie_4', array(
+  'label' => __('Image_Galerie_4', 'theme_31w'),
+  'section' => 'ExamFinal_section',
+)));
+
+$wp_customize->add_setting('img_galerie_5', array(
+  'default' => '',
+  'sanitize_callback' => 'esc_url_raw',
+));
+
+$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'img_galerie_5', array(
+  'label' => __('Image_Galerie_5', 'theme_31w'),
+  'section' => 'ExamFinal_section',
+)));
+
 }
+
 
 
 

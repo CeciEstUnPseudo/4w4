@@ -1,5 +1,6 @@
 <?php
 include_once get_template_directory() . "/functions/genere-list-categorie.php";
+include_once get_template_directory() . "/functions/genere-liste-pays.php";
 include_once get_template_directory() . "/functions/customizer.php";
 
 // Définir le chemin vers le dossier "functions"
@@ -59,6 +60,16 @@ function enqueue_custom_scripts() {
     true
 );
 }
+
+function ajouter_champ_pays_api() {
+  register_rest_field('post', 'pays', [
+      'get_callback' => function ($post_arr) {
+          return get_post_meta($post_arr['id'], 'pays', true);
+      },
+      'schema' => null,
+  ]);
+}
+add_action('rest_api_init', 'ajouter_champ_pays_api');
 
 
 add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');

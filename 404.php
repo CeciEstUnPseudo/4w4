@@ -14,8 +14,7 @@
     <?php $erreur_couleur_texte = get_theme_mod('erreur_couleur_texte', ''); ?>
 
 
-    <!-- Variables extras pour l'examen intra -->
-     <?php $erreur_background = get_theme_mod("erreur_background", "") ?>
+    <?php $erreur_background = get_theme_mod("erreur_background", "") ?>
 
     <style>
         .erreur_couleur{

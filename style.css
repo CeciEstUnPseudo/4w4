@@ -1213,3 +1213,122 @@ footer {
   background-color: rgb(240, 240, 240);
   cursor:pointer;
 }
+
+/* Exam final | Page pays  */
+
+body{
+  background-color:beige;
+}
+.tempPays__intro{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:left;
+  margin:2% auto;
+  width:60%;
+
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.tempPays__intro__titre{
+  width:fit-content;
+}
+
+.tempPays__intro__texte--box{
+  width:100%;
+}
+
+.tempPays__intro__texte{
+  width:100%;
+}
+
+.tempPays__intro__galerie{
+  width:100%;
+  height:40vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.tempPays__intro__galerie-topRow{
+  width:100%;
+  height:20vh;
+
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  justify-content:space-around;
+}
+
+.tempPays__intro__galerie-bottomRow{
+  width:100%;
+  height:40vh;
+
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  justify-content:space-around;
+}
+
+.tempPays__galerie__image{
+  background-color:red;
+}
+
+.tempPays__intro__galerie-topRow > .tempPays__galerie__image{
+  height:100%;
+  flex: 1 0 30%;
+  background-color:grey;
+}
+
+.tempPays__intro__galerie-bottomRow > .tempPays__galerie__image{
+  height:69%;
+  flex: 1 0 49.5%;
+  
+}
+
+.tempPays__restAPI__contenu{
+  background-color:#93c47d;
+  height:120vh;
+  width:100%;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  margin-top:-1%;
+  margin-bottom:-25%;
+
+}
+
+.tempPays__restAPI__contenu > .articles__boutons{
+  width:50%;
+  align-self:center;
+}
+
+
+.pays__boutons{
+  width:40%;
+  display:flex;
+  flex-direction:row;
+  justify-content:space-around;
+  align-items:center;
+  margin:2% auto;
+}
+
+.pays__bouton{
+  
+  width:fit-content;
+  height:5vh;
+  padding:0.5% 1% 1% 1%;
+  border-radius:5px;
+  text-align:center;
+  font-size:clamp(0.5em, 1.5vw, 1em);
+  color:black;
+  text-decoration:none;
+  background-color:white;
+}
+
+.pays__bouton:hover{
+  background-color:rgb(224, 224, 224);
+  text-decoration:underline;
+}
