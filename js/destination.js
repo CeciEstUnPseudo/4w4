@@ -146,6 +146,13 @@
 
     
   });
+// On veut le bouton "France" par défaut
+const premierBouton = document.querySelector('.articles__bouton[data-pays="France"]'); // Sélectionne le bouton "France" par défaut
+
+if (premierBouton) {
+  console.log("Clique sur france");
+  premierBouton.click(); // Déclenche le même comportement que si l'utilisateur avait cliqué
+}
 
 
   // Affichage des articles d'une catégorie spécifique dans une liste
