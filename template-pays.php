@@ -40,9 +40,9 @@ Template Name: Template Pays
   </div>
   <div class="tempPays__restAPI__contenu">
   <?php pays_liste("pays"); ?>
-        <section class="destination">
+        <section class="tempPays__restAPI__pays">
             <h2 class="tempPays__paysSelect">France</h2>
-            <div class="destination__list">
+            <div class="tempPays__destinations">
             </div>
         </section>
   </div>

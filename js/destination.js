@@ -98,7 +98,7 @@ boutons.forEach(function (bouton) {
         .then(response => response.json())
         .then(data => {
           console.log("Pays checkpoint 1");
-          const destinationList = document.querySelector('.destination__list');
+          const destinationList = document.querySelector('.tempPays__destinations');
           const paysTitre = document.querySelector(".tempPays__paysSelect");
           // Enlever les anciens articles de la liste
           destinationList.innerHTML = ""; // On vide la liste avant d'ajouter les nouveaux articles
