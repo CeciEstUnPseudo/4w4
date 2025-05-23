@@ -1267,7 +1267,6 @@ body{
   display:flex;
   flex-direction:row;
   flex-wrap:wrap;
-  justify-content:space-around;
 }
 
 .tempPays__galerie__image{
@@ -1275,14 +1274,16 @@ body{
 }
 
 .tempPays__intro__galerie-topRow > .tempPays__galerie__image{
-  height:100%;
-  flex: 1 0 30%;
+  height:30%;
+  width:30%;
   background-color:grey;
+  align-self:flex-end;
+  flex-grow: 1;
 }
 
 .tempPays__intro__galerie-bottomRow > .tempPays__galerie__image{
   height:69%;
-  flex: 1 0 49.5%;
+  width:50%;
   
 }
 
