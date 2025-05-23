@@ -41,7 +41,7 @@ Template Name: Template Pays
   <div class="tempPays__restAPI__contenu">
   <?php pays_liste("pays"); ?>
         <section class="destination">
-            <h2 class="tempPays__paysSelect">Aucun pays selectionné</h2>
+            <h2 class="tempPays__paysSelect">France</h2>
             <div class="destination__list">
             </div>
         </section>
