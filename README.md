@@ -12,3 +12,5 @@ Description:
 - Le lien vers GitHub est dans le footer
 
 Lien WHC: https://gftnth00.mywhc.ca/4w4_28/
+
+PAGE D'EXAMEN FINAL: https://gftnth00.mywhc.ca/4w4_28/pays/
