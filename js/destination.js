@@ -49,7 +49,6 @@ boutons.forEach(function (bouton) {
           const paysTitre = document.querySelector(".tempPays__paysSelect");
           // Enlever les anciens articles de la liste
           destinationList.innerHTML = ""; // On vide la liste avant d'ajouter les nouveaux articles
-          paysTitre.innerHTML = paysSelectionne; // On vide la liste avant d'ajouter les nouveaux articles
           //
           data.forEach(article => {
             const articleElement = document.createElement('div'); // Créer un nouvel élément div pour chaque article et lui mettre (innerHTML) les 3 éléments
@@ -86,12 +85,19 @@ boutons.forEach(function (bouton) {
       } else {
 
         // Mode de recherche selon le pays
-        const apiUrl = `${domaine}wp-json/wp/v2/posts?search=${paysSelectionne}`;
+        console.log("Domaine = " + domaine);
+        // Enlever "pays" du domaine
+        const domaineSansPays = domaine.replace("pays/", "");
+        console.log("Domaine sans pays = " + domaineSansPays);
+        const apiUrl = `${domaineSansPays}wp-json/wp/v2/posts?search=${paysSelectionne}`;
 
         console.log("APIURL Pays = " + apiUrl);
+
+
       fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
+          console.log("Pays checkpoint 1");
           const destinationList = document.querySelector('.destination__list');
           const paysTitre = document.querySelector(".tempPays__paysSelect");
           // Enlever les anciens articles de la liste
@@ -99,6 +105,7 @@ boutons.forEach(function (bouton) {
           paysTitre.innerHTML = paysSelectionne; // On vide la liste avant d'ajouter les nouveaux articles
           //
           data.forEach(article => {
+            // Seulement faire quelque chose si l'article mentionne paysSelectionee
             const articleElement = document.createElement('div'); // Créer un nouvel élément div pour chaque article et lui mettre (innerHTML) les 3 éléments
             articleElement.classList.add('article__cacher'); // Ajouter la classe article__cacher pour le style
             articleElement.innerHTML = ` 
